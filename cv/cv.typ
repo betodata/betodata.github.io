@@ -130,5 +130,3 @@
   })
 }
 
-#sect("Languages")
-#plain(d.languages)

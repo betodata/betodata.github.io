@@ -61,5 +61,3 @@
 #sect("Selected Awards and Fellowships", tight: true)
 #for a in d.awards.slice(0, 5) { listitem(a) }
 
-#sect("Languages", tight: true)
-#plain(d.languages)
