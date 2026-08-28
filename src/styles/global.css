@@ -9,6 +9,7 @@
 :root{
   /* light ground — landing, teaching */
   --bg:#EEF1EF;
+  --bg-rgb:238,241,239;
   --surf:#E3E8E5;
   --ink:#101614;
   --body:#333B38;
@@ -42,6 +43,10 @@ body{
   color:var(--ink);
   font-family:var(--sans);
   font-weight:300;
+}
+/* Grayscale smoothing thins strokes, which hurts dark-on-light but helps
+   light-on-dark, where glyphs otherwise bloom. So it applies only here. */
+body.dark{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
@@ -101,6 +106,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
   opacity:.9;
 }
 
+/* On a phone the portrait sits behind the text, so nominal contrast against
+   the page stays high while local contrast against the face collapses. This
+   lifts the ground back under the text without hiding the portrait. */
+.stage::after{
+  content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:linear-gradient(to top right,
+    rgb(var(--bg-rgb)) 6%,
+    rgba(var(--bg-rgb),.82) 34%,
+    rgba(var(--bg-rgb),0) 68%);
+  opacity:0;
+}
 .hero{position:relative; z-index:4; padding:44px var(--pad) 40px; margin-top:auto; max-width:660px}
 .eyebrow{
   font-family:var(--mono); font-size:10.5px; letter-spacing:.17em; text-transform:uppercase;
@@ -211,6 +227,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
   .nav ul{gap:15px; font-size:10.5px}
   .field img{right:-34%; opacity:.5}
   .hero{padding-bottom:52px}
+
+  /* Light (300) reads as airy on a large screen and as faint on a phone.
+     Display type keeps its weight; running text gains a step. */
+  body{font-weight:400}
+  .hero .lede,.hero .sub,.entry .who,.entry .ven,.foot{font-weight:400}
+  .entry h3,.entry h2{font-weight:400}
+  .page-head h1{font-weight:300}
+  .stage::after{opacity:1}
 }
 @media (max-width:520px){
   .nav{flex-direction:column; align-items:flex-start; gap:12px}
