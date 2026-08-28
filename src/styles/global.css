@@ -235,6 +235,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
   .entry h3,.entry h2{font-weight:400}
   .page-head h1{font-weight:300}
   .stage::after{opacity:1}
+
+  /* These two paragraphs sit over the portrait, so they carry the worst of
+     it. Size rather than weight: bigger glyphs have proportionally thicker
+     stems, and going heavier here would outweigh everything around them. */
+  .hero .lede{font-size:17.5px; line-height:1.68}
+  .hero .sub{font-size:16px; line-height:1.66}
 }
 @media (max-width:520px){
   .nav{flex-direction:column; align-items:flex-start; gap:12px}
