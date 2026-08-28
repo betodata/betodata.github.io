@@ -34,6 +34,18 @@
   --measure:52ch;
 }
 
+/* Entry styling reads these, and the CONTAINER decides which ground it is on.
+   Scoping to <body> was wrong: the landing page is light but holds a dark
+   band, so light overrides were painting near-black titles on near-black. */
+:root{
+  --e-ink:var(--ink); --e-body:var(--body); --e-mut:var(--mut);
+  --e-rule:var(--rule); --e-acc:var(--acc); --e-chip:var(--mut);
+}
+body.dark,.band{
+  --e-ink:var(--d-ink); --e-body:var(--d-body); --e-mut:var(--d-mut);
+  --e-rule:var(--d-rule); --e-acc:var(--d-acc); --e-chip:#C0C6C4;
+}
+
 *,*::before,*::after{box-sizing:border-box}
 
 html{-webkit-text-size-adjust:100%}
@@ -167,46 +179,34 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
 .list{padding:0 var(--pad) 70px}
 .grp{
   font-family:var(--mono); font-size:10.5px; letter-spacing:.17em; text-transform:uppercase;
-  padding:34px 0 8px; margin-top:16px; border-top:1px solid var(--d-rule); color:var(--d-mut);
+  padding:34px 0 8px; margin-top:16px; border-top:1px solid var(--e-rule); color:var(--e-mut);
 }
-.light .grp{border-top-color:var(--rule); color:var(--mut)}
 
 /* ----------------------------- publications ------------------------------ */
-/* Title first, at the margin. The year is demoted to the venue line. */
-.entry{padding:21px 0; border-top:1px solid var(--d-rule)}
-.light .entry{border-top-color:var(--rule)}
+.entry{padding:21px 0; border-top:1px solid var(--e-rule)}
 .entry:first-of-type{border-top:none}
 .entry h3,.entry h2{
   font-family:var(--serif); font-weight:300; font-size:22px; line-height:1.32;
-  margin:0 0 8px; letter-spacing:-.006em; color:var(--d-ink); max-width:64ch;
+  margin:0 0 8px; letter-spacing:-.006em; color:var(--e-ink); max-width:64ch;
 }
-.light .entry h3,.light .entry h2{color:var(--ink)}
-.entry .who{font-size:13.5px; color:var(--d-mut); margin:0 0 6px; line-height:1.6}
-.light .entry .who{color:var(--mut)}
-.entry .who b{color:var(--d-ink); font-weight:500}
-.light .entry .who b{color:var(--ink)}
-.entry .ven{font-family:var(--serif); font-size:13.5px; color:var(--d-acc); font-style:italic; margin:0 0 14px}
-.light .entry .ven{color:var(--acc)}
-.entry .ven .yr{font-style:normal; color:var(--d-mut); font-variant-numeric:tabular-nums}
-.light .entry .ven .yr{color:var(--mut)}
+.entry .who{font-size:13.5px; color:var(--e-mut); margin:0 0 6px; line-height:1.6}
+.entry .who b{color:var(--e-ink); font-weight:500}
+.entry .ven{font-family:var(--serif); font-size:13.5px; color:var(--e-acc); font-style:italic; margin:0 0 14px}
+.entry .ven .yr{font-style:normal; color:var(--e-mut); font-variant-numeric:tabular-nums}
 
 .chips{display:flex; flex-wrap:wrap; gap:8px}
 .chips a{
   font-family:var(--mono); font-size:9.5px; letter-spacing:.12em; text-transform:uppercase;
-  text-decoration:none; padding:5px 10px; border:1px solid var(--d-rule); color:#C0C6C4;
+  text-decoration:none; padding:5px 10px; border:1px solid var(--e-rule); color:var(--e-chip);
   transition:border-color .15s ease,color .15s ease;
 }
-.chips a:hover{border-color:var(--d-acc); color:var(--d-acc)}
-.light .chips a{border-color:var(--rule); color:var(--mut)}
-.light .chips a:hover{border-color:var(--acc); color:var(--acc)}
+.chips a:hover{border-color:var(--e-acc); color:var(--e-acc)}
 
 .awd{
-  font-family:var(--mono); font-size:9.5px; letter-spacing:.06em; color:var(--d-mut);
-  margin:12px 0 0; padding-left:11px; border-left:1px solid var(--d-acc); line-height:1.65;
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.06em; color:var(--e-mut);
+  margin:12px 0 0; padding-left:11px; border-left:1px solid var(--e-acc); line-height:1.65;
 }
-.light .awd{color:var(--mut); border-left-color:var(--acc)}
-.prev{font-size:12px; color:var(--d-mut); font-style:italic; margin:8px 0 0; opacity:.85; line-height:1.55}
-.light .prev{color:var(--mut)}
+.prev{font-size:12px; color:var(--e-mut); font-style:italic; margin:8px 0 0; opacity:.85; line-height:1.55}
 
 /* ------------------------------- footer ---------------------------------- */
 .foot{
