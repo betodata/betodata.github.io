@@ -23,29 +23,37 @@ const teach   = read('teaching.yml');
 const cv      = read('cv.yml');
 
 // --- CV convention: "with X and Y" (the website uses full author lists) ------
-function withClause(item) {
-  const co = item.coauthors || [];
-  if (!co.length) return '';
-  if (co.length === 1) return `with ${co[0]}`;
-  return `with ${co.slice(0, -1).join(', ')} and ${co[co.length - 1]}`;
-}
-
 // Word and hand-typed YAML mix straight and curly marks; normalise for print.
 const smartQuotes = (s) => s
   .replace(/(\w)'(\w)/g, '$1\u2019$2')
   .replace(/'/g, '\u2019');
 
+function withClause(item) {
+  const co = item.coauthors || [];
+  const verb = item.role ? `${item.role} with` : 'with';   // e.g. "coedited with"
+  if (!co.length) return item.role ? item.role : '';
+  if (co.length === 1) return `${verb} ${co[0]}`;
+  return `${verb} ${co.slice(0, -1).join(', ')} and ${co[co.length - 1]}`;
+}
+
+// Builds one citation. Articles carry `venue` + `volume`; chapters add
+// `editors` + `publisher`; books have no `venue` at all, only `publisher`
+// and `series` — hence the parts array rather than a chain of ifs.
 function citation(item) {
-  const bits = [];
-  if (item.title) bits.push(`“${item.title},”`);
+  let s = `\u201C${item.title},\u201D`;
   const w = withClause(item);
-  if (w) bits.push(`${w},`);
-  if (item.editors) bits.push(`in ${item.editors},`);
-  if (item.venue) bits.push(item.venue);
-  if (item.publisher && item.venue !== item.publisher) bits.push(`, ${item.publisher}`);
-  if (item.series && !item.venue) bits.push(`${item.publisher} · ${item.series}`);
-  if (item.volume) bits.push(` ${item.volume}`);
-  let s = bits.join(' ').replace(/\s+,/g, ',').replace(/\s+/g, ' ').trim();
+  if (w) s += ` ${w},`;
+  if (item.editors) s += ` in ${item.editors},`;
+
+  const parts = [];
+  if (item.venue) parts.push(item.venue);
+  if (item.publisher && item.publisher !== item.venue) parts.push(item.publisher);
+  if (item.series) parts.push(item.series);
+  if (parts.length) s += ` ${parts.join(', ')}`;
+  if (item.volume) s += ` ${item.volume}`;
+  if (item.language) s += ` (in ${item.language})`;
+
+  s = s.replace(/,\s*,/g, ',').replace(/\s+/g, ' ').trim();
   if (!/[.?!]$/.test(s)) s += '.';
   return smartQuotes(s);
 }
@@ -57,9 +65,11 @@ const fmt = (list) => list.map((i) => ({
   former: i.former_title ?? null,
 }));
 
-// Short CV: items flagged `featured: true`, else the 8 most recent articles.
+// Short CV: items flagged `featured: true`, else the 6 most recent articles.
+// Tuned to land on one page — add `featured: true` in publications.yml to pick
+// your own, but keep the count to about six or it spills onto a second page.
 const featured = pubs.articles.filter((a) => a.featured);
-const shortArticles = featured.length ? featured : pubs.articles.slice(0, 8);
+const shortArticles = featured.length ? featured : pubs.articles.slice(0, 6);
 
 const courses = teach.institutions.map((inst) => ({
   name: inst.name + (inst.location ? ` (${inst.location})` : ''),

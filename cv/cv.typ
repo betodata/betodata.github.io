@@ -14,18 +14,19 @@
       align(right)[#d.generated])
   },
 )
-#set text(font: "Spectral", size: 9.3pt, fill: ink, lang: "en")
-#set par(leading: 0.58em, spacing: 0.58em)
+#set text(font: "Spectral", size: 9.4pt, fill: ink, lang: "en")
+#set par(leading: 0.70em, spacing: 0.70em)
 
 // ------------------------------- header -------------------------------------
-#block(below: 1.1em, grid(columns: (1fr, auto), column-gutter: 2em,
+#block(below: 1.45em, grid(columns: (1fr, auto), column-gutter: 2em,
   {
-    text(size: 22pt, weight: "light", tracking: -0.01em, d.profile.name)
-    v(0.35em, weak: true)
-    text(size: 8.5pt, fill: accent, tracking: 0.1em, upper("Professor of Political Science · ITAM"))
+    block(below: 0.9em, text(size: 23pt, weight: "light", tracking: -0.015em, d.profile.name))
+    block(below: 0pt, text(size: 8.3pt, fill: accent, tracking: 0.13em,
+      upper("Professor of Political Science · ITAM")))
   },
   align(right, {
     set text(size: 8.3pt, fill: muted)
+    set par(leading: 0.55em)
     for l in d.profile.address { l; linebreak() }
     link("mailto:" + d.profile.email, d.profile.email); linebreak()
     link("https://" + d.profile.homepage, d.profile.homepage)
@@ -43,7 +44,7 @@
         " (" + str(r.start) + "–" + (if "end" in r and r.end != none { str(r.end) } else { "" }) + ")"
       } else { "" }
       let unit = if "unit" in r and r.unit != none { ", " + r.unit } else { "" }
-      block(below: 0.3em, pad(left: 1em, text(size: 9pt, top-edge: "cap-height", bottom-edge: "baseline", r.title + unit + span)))
+      block(below: 0.46em, pad(left: 1em, text(size: 9pt, top-edge: "cap-height", bottom-edge: "baseline", r.title + unit + span)))
     }
   })
 }
