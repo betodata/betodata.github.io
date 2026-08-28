@@ -1,0 +1,23 @@
+{
+  // Editing data/*.yml is the main job in this repo — make that pleasant and safe.
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
+    "editor.quickSuggestions": { "other": true, "comments": false, "strings": true }
+  },
+  "yaml.format.enable": true,
+  "yaml.validate": true,
+  // Tabs are invalid in YAML and the error message is unhelpful. Show them.
+  "editor.renderWhitespace": "boundary",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "[astro]": { "editor.defaultFormatter": "astro-build.astro-vscode" },
+  "[typst]": { "editor.wordWrap": "on" },
+  "tinymist.formatterMode": "typstyle",
+
+  "search.exclude": { "**/node_modules": true, "**/dist": true, "**/.astro": true },
+  "files.associations": { "*.typ": "typst" }
+}

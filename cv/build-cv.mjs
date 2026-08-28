@@ -24,46 +24,66 @@ const cv      = read('cv.yml');
 
 // --- CV convention: "with X and Y" (the website uses full author lists) ------
 // Word and hand-typed YAML mix straight and curly marks; normalise for print.
-const smartQuotes = (s) => s
+const smartQuotes = (s) => (s ?? '')
   .replace(/(\w)'(\w)/g, '$1\u2019$2')
   .replace(/'/g, '\u2019');
 
 function withClause(item) {
   const co = item.coauthors || [];
   const verb = item.role ? `${item.role} with` : 'with';   // e.g. "coedited with"
-  if (!co.length) return item.role ? item.role : '';
+  if (!co.length) return item.role || '';
   if (co.length === 1) return `${verb} ${co[0]}`;
   return `${verb} ${co.slice(0, -1).join(', ')} and ${co[co.length - 1]}`;
 }
 
-// Builds one citation. Articles carry `venue` + `volume`; chapters add
-// `editors` + `publisher`; books have no `venue` at all, only `publisher`
-// and `series` — hence the parts array rather than a chain of ifs.
-function citation(item) {
-  let s = `\u201C${item.title},\u201D`;
+/* Citations are emitted in four parts rather than one string so that Typst can
+   italicise the middle one. Which field lands in `ital` depends on the kind of
+   work — the journal for an article, the containing book for a chapter, the
+   work's own title for a book:
+
+     article  “Title,” with X,      <Journal>          22(4): 1-20.
+     chapter  “Title,” in Eds.,     <Book title>     , Publisher.
+     book                            <Title>         , with X, Publisher, Series.
+     wp       “Title,” with X.                                                  */
+function citationParts(item) {
   const w = withClause(item);
-  if (w) s += ` ${w},`;
-  if (item.editors) s += ` in ${item.editors},`;
+  const isBook = !item.venue && !item.editors && !!item.publisher;
 
-  const parts = [];
-  if (item.venue) parts.push(item.venue);
-  if (item.publisher && item.publisher !== item.venue) parts.push(item.publisher);
-  if (item.series) parts.push(item.series);
-  if (parts.length) s += ` ${parts.join(', ')}`;
-  if (item.volume) s += ` ${item.volume}`;
-  if (item.language) s += ` (in ${item.language})`;
+  if (isBook) {
+    const post = [w, item.publisher, item.series].filter(Boolean).join(', ');
+    return { pre: '', ital: item.title, vol: '', post };
+  }
 
-  s = s.replace(/,\s*,/g, ',').replace(/\s+/g, ' ').trim();
-  if (!/[.?!]$/.test(s)) s += '.';
-  return smartQuotes(s);
+  let pre = `\u201C${item.title},\u201D`;
+  if (w) pre += ` ${w},`;
+  if (item.editors) pre += ` in ${item.editors},`;
+  if (!item.venue) pre = pre.replace(/,$/, '');          // working paper: no venue
+
+  const post = [];
+  if (item.publisher && item.publisher !== item.venue) post.push(item.publisher);
+  if (item.series) post.push(item.series);
+  if (item.language) post.push(`in ${item.language}`);
+
+  return {
+    pre,
+    ital: item.venue || '',
+    vol: item.volume || '',
+    post: post.join(', '),
+  };
 }
 
-const fmt = (list) => list.map((i) => ({
-  year: i.year ?? null,
-  text: citation(i),
-  note: i.note ?? null,
-  former: i.former_title ?? null,
-}));
+const fmt = (list) => list.map((i) => {
+  const c = citationParts(i);
+  return {
+    year: i.year ?? null,
+    pre:  smartQuotes(c.pre),
+    ital: smartQuotes(c.ital),
+    vol:  smartQuotes(c.vol),
+    post: smartQuotes(c.post),
+    note: i.note ?? null,
+    former: i.former_title ?? null,
+  };
+});
 
 // Short CV: items flagged `featured: true`, else the 6 most recent articles.
 // Tuned to land on one page — add `featured: true` in publications.yml to pick

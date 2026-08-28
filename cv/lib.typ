@@ -20,11 +20,11 @@
   block(below: 0.62em, width: 100%,
     grid(columns: (4.1em, 1fr), column-gutter: 0.7em,
       text(fill: muted, size: 8.2pt)[#year],
-      body))
+      par(hanging-indent: 1.1em, body)))
 }
 
 #let plain(body) = block(below: 0.62em, width: 100%,
-  par(hanging-indent: 1em, body))
+  par(hanging-indent: 1.4em, body))
 
 // An entry parsed out of a flat "2019. Some text." string.
 #let dated(s) = {
@@ -38,7 +38,14 @@
 
 #let pubitem(it) = {
   row(if it.year == none { "" } else { str(it.year) }, {
-    it.text
+    if it.pre != "" [#it.pre ]
+    if it.ital != "" { emph(it.ital) }
+    if it.vol != "" [ #it.vol]
+    if it.post != "" {
+      if it.ital != "" or it.vol != "" [, ]
+      it.post
+    }
+    "."
     if it.note != none {
       linebreak()
       text(size: 8.2pt, style: "italic", fill: muted, it.note)
@@ -46,7 +53,7 @@
     if it.former != none {
       linebreak()
       text(size: 8.2pt, style: "italic", fill: muted,
-        "Previously circulated as “" + it.former + ".”")
+        "Previously circulated as \u{201C}" + it.former + ".\u{201D}")
     }
   })
 }
