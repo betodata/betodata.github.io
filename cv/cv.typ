@@ -20,7 +20,7 @@
   },
 )
 #set text(font: FONT, size: SIZE, fill: ink, lang: "en")
-#set par(leading: 0.70em, spacing: 0.70em)
+#set par(leading: 0.5em, spacing: 0.62em)
 
 // ------------------------------- header -------------------------------------
 #block(below: 1.45em, grid(columns: (1fr, auto), column-gutter: 2em,
@@ -84,7 +84,7 @@
 #for (org, items) in d.institutional {
   block(below: 1.5em, {
     orghead(org)
-    for i in items { plain(i) }
+    for i in items { plain(i, indent: 1.2em) }
   })
 }
 
@@ -98,12 +98,17 @@
 #for inst in d.teaching {
   block(below: 1.5em, {
     orghead(inst.name, sub: inst.years)
-    for c in inst.courses { plain(c) }
+    for c in inst.courses { plain(c, indent: 1.2em) }
   })
 }
 
 #sect("PhD Student Advising")
-#for a in d.advising { plain(a) }
+#for g in d.advising {
+  block(below: 0.9em, {
+    if g.group != none { orghead(g.group) }
+    for a in g.items { plain(a, indent: if g.group != none { 1.2em } else { 0em }) }
+  })
+}
 
 #sect("Selected Media Coverage of Research")
 #for m in d.media { listitem(m) }
@@ -113,13 +118,14 @@
 
 #sect("Other Experience")
 #for e in d.experience {
-  block(below: 0.4em, {
-    text(weight: "medium", e.role + ", " + e.organization)
-    text(fill: muted, ", " + e.years)
-    linebreak()
-    pad(left: 1em, text(e.detail))
+  block(below: 0.7em, {
+    block(below: 0.32em, {
+      text(weight: "medium", e.role + ", " + e.organization)
+      text(fill: muted, ", " + e.years)
+    })
+    block(below: 0.45em, pad(left: 1.2em, text(e.detail)))
     if "note" in e and e.note != none {
-      linebreak(); pad(left: 1em, text(style: "italic", fill: muted, e.note))
+      block(below: 0.1em, pad(left: 1.2em, text(style: "italic", fill: muted, e.note)))
     }
   })
 }

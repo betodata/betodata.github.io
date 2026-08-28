@@ -23,17 +23,17 @@
       par(hanging-indent: 1.1em, body)))
 }
 
-#let plain(body) = block(below: 0.62em, width: 100%,
-  par(hanging-indent: 1.4em, body))
+#let plain(body, indent: 0em) = block(below: 0.5em, width: 100%,
+  pad(left: indent, par(hanging-indent: 1.4em, body)))
 
 // A flat list entry: {year, text}. Items with no year still align their body
 // with everything else, and get a little air so they read as separate notes.
 #let listitem(it) = {
   if it.year == "" {
-    v(0.35em, weak: true)
-    block(below: 0.62em, width: 100%,
-      grid(columns: (4.1em, 1fr), column-gutter: 0.7em,
-        [], par(hanging-indent: 1.1em, it.text)))
+    // No year to hang from, so this reads as a closing note: flush left,
+    // full measure, and clearly separated from the dated entries above.
+    v(0.9em, weak: true)
+    block(below: 0.6em, width: 100%, par(hanging-indent: 1.4em, it.text))
   } else {
     row(it.year, it.text)
   }

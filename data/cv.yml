@@ -157,22 +157,28 @@ invited_presentations:
   - "2005. Yale University. Comparative Politics Seminar. Presenter."
   - "2005. Princeton University. International Relations Colloquium. Presenter."
 
+# Grouped: the two University of Chicago sub-headings were plain list
+# items in the Word original and read as advisees when flattened.
 advising:
-  - "External Examiner for Felipe Torres Raposo, Oxford University, United Kingdom, Department of Politics and International Relations, Pembroke College. DPhil 2022."
-  - "External Examiner for Alejandro García Magos, University of Toronto, Toronto, Canada, Department of Political Science, PhD 2019."
-  - "Dissertation committee member for Adrián Lucardi, Washington University, St. Louis, MO, USA, Department of Political Science, PhD 2016."
-  - "Department of Political Science (University of Chicago)"
-  - "Dissertation committee member for Juan Fernando Ibarra, PhD 2016 (now Faculty Member, Department of Political Science, Colgate University)"
-  - "Dissertation committee member for José Antonio Hernández Company, PhD 2015 (now Assistant Professor at School of Government, Instituto Tecnológico de Monterrey, Mexico City)"
-  - "Dissertation committee member for Lauren Duquette-Rury, PhD 2011 (now Assistant Professor of Sociology, University of California, Los Angeles)"
-  - "Dissertation committee member for Manuel Viedma, PhD 2014"
-  - "Dissertation committee member for Milena Ang, PhD candidate"
-  - "Dissertation committee member for Chris Haid, PhD candidate"
-  - "Dissertation committee member for Dina Rasheed, PhD candidate"
-  - "Other Departments (University of Chicago)"
-  - "Dissertation committee member for Miguel Díaz, Booth School of Business, PhD 2009 (now Economics Researcher at the Central Bank of Mexico)"
-  - "Dissertation committee member for Jorge Fábrega, Harris School of Public Policy, PhD 2009 (now Assistant Professor of Government, Universidad Adolfo Ibáñez, Santiago, Chile)"
-  - "Dissertation committee member for Dimitris Batzilis, Department of Economics, PhD 2015"
+  - group: null
+    items:
+      - "External Examiner for Felipe Torres Raposo, Oxford University, United Kingdom, Department of Politics and International Relations, Pembroke College. DPhil 2022."
+      - "External Examiner for Alejandro García Magos, University of Toronto, Toronto, Canada, Department of Political Science, PhD 2019."
+      - "Dissertation committee member for Adrián Lucardi, Washington University, St. Louis, MO, USA, Department of Political Science, PhD 2016."
+  - group: "Department of Political Science (University of Chicago)"
+    items:
+      - "Dissertation committee member for Juan Fernando Ibarra, PhD 2016 (now Faculty Member, Department of Political Science, Colgate University)"
+      - "Dissertation committee member for José Antonio Hernández Company, PhD 2015 (now Assistant Professor at School of Government, Instituto Tecnológico de Monterrey, Mexico City)"
+      - "Dissertation committee member for Lauren Duquette-Rury, PhD 2011 (now Assistant Professor of Sociology, University of California, Los Angeles)"
+      - "Dissertation committee member for Manuel Viedma, PhD 2014"
+      - "Dissertation committee member for Milena Ang, PhD candidate"
+      - "Dissertation committee member for Chris Haid, PhD candidate"
+      - "Dissertation committee member for Dina Rasheed, PhD candidate"
+  - group: "Other Departments (University of Chicago)"
+    items:
+      - "Dissertation committee member for Miguel Díaz, Booth School of Business, PhD 2009 (now Economics Researcher at the Central Bank of Mexico)"
+      - "Dissertation committee member for Jorge Fábrega, Harris School of Public Policy, PhD 2009 (now Assistant Professor of Government, Universidad Adolfo Ibáñez, Santiago, Chile)"
+      - "Dissertation committee member for Dimitris Batzilis, Department of Economics, PhD 2015"
 
 media_coverage:
   - "2024. VoxDev – Institutions and Political Economy. “Can social media be harnessed to bolster electoral accountability?” (with José Ramón Enríquez, Horacio Larreguy, and John Marshall)."

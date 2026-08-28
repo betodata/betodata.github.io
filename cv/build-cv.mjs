@@ -138,7 +138,10 @@ const data = {
   conferences: cv.conference_presentations.map(splitYear),
   teaching: courses,
   memberships: cv.professional_memberships,
-  advising: cv.advising.map((a) => smartQuotes(a)),
+  advising: cv.advising.map((g) => ({
+    group: g.group ?? null,
+    items: g.items.map((x) => smartQuotes(x)),
+  })),
   media: cv.media_coverage.map(splitYear),
   experience: cv.other_experience,
   languages: profile.languages,
