@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Entry from '../components/Entry.astro';
+import { publications } from '../lib/data.js';
+
+const { articles, books, working_papers, other_publications } = publications;
+---
+<Base current="research" theme="dark" title="Research"
+      description="Peer-reviewed articles, books, and work in progress by Alberto Simpser.">
+  <div class="page-head">
+    <h1>Research</h1>
+    <p>
+      Peer-reviewed articles, books, and work in progress. Where a replication
+      package, preprint, or pre-registration exists, it is linked directly.
+    </p>
+  </div>
+
+  <div class="list">
+    <p class="grp" style="border-top:none; margin-top:0; padding-top:0">Articles &amp; chapters</p>
+    {articles.map((item) => <Entry item={item} />)}
+
+    <p class="grp">Books</p>
+    {books.map((item) => <Entry item={item} />)}
+
+    <p class="grp">Work in progress</p>
+    {working_papers.map((item) => <Entry item={item} showYear={false} />)}
+
+    <p class="grp">Other writing</p>
+    {other_publications.map((item) => <Entry item={item} />)}
+  </div>
+</Base>

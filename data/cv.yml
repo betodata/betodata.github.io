@@ -1,0 +1,221 @@
+# ---------------------------------------------------------------------------
+# cv.yml — sections that appear in the PDF CV.
+#
+# Publications live in publications.yml and teaching in teaching.yml; both are
+# pulled into the CV automatically. This file holds everything else.
+#
+# Anything with  web: true  is ALSO surfaced on the website.
+# ---------------------------------------------------------------------------
+
+education:
+  - {degree: Ph.D., field: Political Science, institution: Stanford University, year: 2005}
+  - {degree: M.A.,  field: Economics,         institution: Stanford University, year: 2005}
+  - {degree: B.Sc., field: Engineering Sciences (Environmental), institution: Harvard College, year: 1996}
+
+positions:
+  - institution: ITAM
+    location: Mexico
+    roles:
+      - {title: Professor of Political Science, start: 2019, end: present}
+      - {title: Chair, unit: Department of Political Science, start: 2018, end: present}
+      - {title: Faculty Affiliate, unit: Center for Economic Research (CIE)}
+      - {title: Faculty Affiliate, unit: Center for Energy and Natural Resources (CIERN)}
+      - {title: Associate Professor of Political Science, start: 2014, end: 2019}
+  - institution: University of Chicago
+    roles:
+      - {title: Assistant Professor, unit: Department of Political Science, start: 2006, end: 2014}
+      - {title: Faculty Affiliate, unit: Center for Latin American Studies}
+      - {title: Faculty Affiliate, unit: Center for Mexican Studies}
+
+grants:
+  - "2025. Notre Dame University, in support of “Promoting Civic Values at Scale,” with Prabhat Bharnwal, Alejandro Estefan-Dávila, and Enrique Seira."
+  - "2023. IKI Learning by Doing, in support of “Grassroots Support for Climate Change,” with Juan Carlos Belausteguigoitia and Vidal Romero."
+  - "2021. J-PAL Governance Initiative, in support of “Promoting Civic Values at Scale,” with Enrique Seira."
+  - "2021. Anonymous foundation (USA), in support of “Promoting Civic Values at Scale,” with Enrique Seira."
+  - "2021. Anonymous foundation (Mexico), in support of “Promoting Democracy in Mexico,” with José Ramón Enríquez, John Marshall, and Horacio Larreguy."
+  - "2020. Inter-American Development Bank, in support of “Understanding the Effects of Covid-19,” with Cristina Parilli, Déborah Martínez V., and Carlos Scartascini."
+  - "2019. Inter-American Development Bank, in support of “Audits, Civic Participation, and Trust,” with José Ramón Enríquez, Phil Keefer, Horacio Larreguy, John Marshall, and Carlos Scartascini."
+  - "2018. WhatsApp Misinformation and Social Science Research Award, in support of “Information, Trust, Engagement, and WhatsApp in Mexico and Latin America,” with Noam Lupu and Elizabeth Zechmeister."
+  - "2018. ConTex Collaborative Research Grant in support of “How Do Vote-Buying Attempts Influence Voters, Elections, and the Quality of Democracy in Mexico?” with Kenneth Greene."
+  - "2017. Matías Romero Program for Joint Research (short stay visiting scholar program, UT Austin). Declined."
+  - "2016. J-PAL Governance Initiative Grant in support of “Donating Time for Democracy” project, with Andrei Gomberg, Enrique Seira, and Ulrike Malmendier."
+  - "2013. Division of Social Sciences Research Grant in support of experimental work on corruption, University of Chicago."
+  - "2010. Book Conference on Why Parties and Governments Manipulate Elections, sponsored by the Niehaus Center for Globalization and Governance, Woodrow Wilson School of Public and International Affairs, Princeton University."
+  - "2009. Norman Wait Harris Award, University of Chicago Center for International Studies."
+  - "2009. Center for Latin American Studies Junior Faculty Research Grant, University of Chicago."
+  - "2008. Division of Social Sciences Research Grant, University of Chicago."
+  - "2007. Division of Social Sciences Research Grant, University of Chicago."
+
+fellowships_and_awards:
+  - "2025- EGAP Academic Member."
+  - "2024. Ronald Coase Institute Alumni Achievement Award."
+  - "2023- J-PAL LAC Affiliate."
+  - "2023-2025. Recurrent Visitor, Institute for Advanced Study in Toulouse, Toulouse School of Economics."
+  - "2021-2022. Visiting Fellow, Institute for Advanced Study in Toulouse, Toulouse School of Economics."
+  - "2019. O’Gorman Scholars Program (summer visiting scholar program), Columbia University."
+  - "2015-2018. Associate Member, University of Chicago’s Center for Latin American Studies."
+  - "2011. National Fellow, Hoover Institution, Stanford University."
+  - "2005-2006. Research Fellow, Center for Globalization and Governance (now Niehaus Center), Woodrow Wilson School of Public and International Affairs, Princeton University."
+  - "2005-2006. Visiting Scholar (by courtesy), New York University."
+  - "2005. Fellow, Ronald Coase Institute, Barcelona, Spain. September."
+
+service_to_discipline:
+  - {year: "2025", role: Nominating Committee Member, organization: "Society for Institutional and Organizational Economics"}
+  - {year: "2021", role: Program Committee Member, organization: "Society for Institutional and Organizational Economics 25th Annual Conference"}
+  - {year: "2020-", role: Advisory Board Member, organization: "Latin American Public Opinion Project (LAPOP), Vanderbilt University"}
+  - {year: "2020", role: Committee Chair, organization: "Best Article Award, Democracy and Autocracy Section, American Political Science Association"}
+  - {year: "2019", role: Program Committee Member, organization: "Society for Institutional and Organizational Economics 23rd Annual Conference, Stockholm School of Economics"}
+  - {year: "2018", role: Council Member, organization: "American Political Science Association, three-year term"}
+  - {year: "2018", role: Editorial Board Member, organization: "Política y Gobierno"}
+  - {year: "2017", role: Committee Member, organization: "McGillivray Best Paper Award, Political Economy Section, American Political Science Association"}
+  - {year: "2016", role: Co-Chair, organization: "Political Economy Section Division, American Political Science Association Annual Meeting"}
+  - {year: "2015", role: Committee Chair, organization: "Sage Best Paper Award, Comparative Politics Section, American Political Science Association"}
+  - {year: "2014-", note: "2016. Planning Committee MemberComparative Study of Electoral Systems (CSES), Modules 5 and 6"}
+  - {year: "", note: "Reviewer for American Journal of Political Science, American Political Science Review, Applied Economics Letters, British Journal of Political Science, Cambridge University Press, Comparative Political Studies, Economics and Politics, Games and Economic Behavior, International Organization, Journal of the European Economic Association, Journal of Politics, Latin American Politics and Society, Perspectives on Politics, Public Choice, Research and Politics, Review of Economics and Statistics, TESS (Time Sharing Experiments for the Social Sciences), World Politics"}
+  - {year: "", note: "Former Editorial Board Member, Journal of Election Technology and Systems (JETS/USENIX), edited by Walter Mebane and Dan Wallach, University of Michigan"}
+
+invited_presentations:
+  - "2026. Toulouse School of Economics, Conference on Popular Support for Authoritarian Regimes. Discussant."
+  - "2026. University of Southern California, Department of Economics, Presenter."
+  - "2026. University of Tokyo, Department of Political Science, Presenter."
+  - "2025. ETH Zurich, EGAP, Presenter."
+  - "2025. SIOE, Sydney, Australia, Presenter and Chair."
+  - "2025. RCI Alumni Conference, Sydney, Australia, Presenter."
+  - "2025. ITESM – 3a Conferencia de Ciencia Política. Presenter"
+  - "2024. Toulouse School of Economics – Institute for Advanced Study of Toulouse – General Seminar. Presenter."
+  - "2024. Toulouse School of Economics – Institute for Advanced Study of Toulouse – Historical Political Economy Working Group. Presenter."
+  - "2023. University of California, San Diego. ITAM-UCSD conference. Presenter."
+  - "2023. University of Pennsylvania. Behavioral Public Policy, in-class research paper presentation."
+  - "2022. Toulouse School of Economics – Institute for Advanced Study of Toulouse – Political Economy Workshop. Organizer and presenter."
+  - "2022. Toulouse School of Economics, Economics and Biology Workshop. Discussant."
+  - "2022. Oxford University, Center for Experimental Social Sciences seminar, Nuffield College. Presenter."
+  - "2021. European Center for Advanced Research in Economics and Statistics, Université Libre de Bruxelles, Belgium. Presenter."
+  - "2021. EGAP (Evidence in Government and Politics) Priority Theme Seminar Series on Democracy, Conflict, and Polarization. Presenter."
+  - "2021. 6th Pyrenean Interdisciplinary Research Event, Institute for Advanced Study of Toulouse, Béziers, France. Presenter."
+  - "2021. Institute for Advanced Study in Toulouse, Tuesday Seminar, France. Presenter."
+  - "2021. University of Essex, United Kingdom. Presenter."
+  - "2019. UCSD-ITAM Applied Economics Conference, Mexico City. Presenter."
+  - "2019. University of Michigan, Center for Political Studies. Presenter."
+  - "2019. Princeton University, Clientelism Revisited workshop. Presenter."
+  - "2018. Oxford / Nuffield Center for Experimental Social Sciences and Universidad de Santiago, Santiago, Chile. Presenter."
+  - "2018. University of Texas at Austin, Mexico’s Political Earthquake: The 2018 Elections, Democracy, and Binational Relations Conference. Presenter."
+  - "2018. SeLab Consortium, Vanderbilt University. Discussant."
+  - "2018. Emory Asheville Political Economy Conference. Presenter."
+  - "2018. University of Virginia, Lansing B. Lee, Jr. Seminar in Global Politics. Presenter."
+  - "2017. Universidad de los Andes, Liderazgo x Bogotá Program. Bogotá, Colombia. Presenter."
+  - "2017. Universidad de los Andes, Programa de Alto Gobierno. Bogotá, Colombia. Presenter."
+  - "2017. International Conference on Fiscal Modernization, Anti-Corruption Policy, and Peacebuilding, Government of Colombia, Auditoría General de la Nación. Bogotá, Colombia. Presenter."
+  - "2017. Centro de Investigación y Docencia Económicas (CIDE), Mexico, Center for Political Studies Seminar. Presenter."
+  - "2017. Vanderbilt University, Nashville, Comparative Politics Speaker Series. Presenter."
+  - "2016. University of Chicago Law School, Conference on Guest Workers. Presenter."
+  - "2016. Washington University, St. Louis, seminar talk, Political Science Department. Presenter."
+  - "2016. INAI (National Institute for Access to Information) Forum on Corruption and Transparency, Mexico City, Mexico. Presenter."
+  - "2016. Forum on Independent Candidacies, ITAM, Mexico City, Mexico. Speaker."
+  - "2015. Gothenburg University, Gothenburg, Sweden. Presenter."
+  - "2015. National Chengchi University, Taipei, Taiwan. Presenter."
+  - "2015. Centro de Investigación y Docencia Económicas (CIDE), Mexico, Political Science Workshop. Presenter."
+  - "2014. Wharton School, Financial Institutions Center, and Faculty of Management, University of Warsaw. Conference on Institutions, Culture, and Long-Term Economic Effects, Warsaw, Poland. Presenter."
+  - "2014. New York University, Department of Politics, Comparative Politics Workshop. Presenter."
+  - "2014. George Mason University, Public Choice Seminar. Presenter."
+  - "2013. Tel Aviv University, Department of Political Science. Presenter."
+  - "2013. Hebrew University of Jerusalem. Department of Political Science. Presenter."
+  - "2013. New Economic School and Higher School of Economics, Moscow. International Conference on Culture, Diversity, and Development. Presenter."
+  - "2013. Higher School of Economics, National Research University, Moscow, Center for the Study of Institutions and Development. Presenter."
+  - "2013. Harvard University. Harvard Conference on Election Fraud. Presenter."
+  - "2013. Higher School of Economics, National Research University, Moscow, Russian Summer School on Institutional Analysis. Presenter."
+  - "2013. University of California, San Diego. Comparative Politics Speaker Series and Center for U.S.-Mexican Studies, IR/PS. Presenter."
+  - "2013. University of Wisconsin, Madison, Political Economy Colloquium. Presenter."
+  - "2013. Global Organization of Parliamentarians Against Corruption, Fifth Global Conference. Manila, Philippines. Presenter."
+  - "2012. Angara Centre for Law and Economics. Manila, Philippines. Presenter."
+  - "2012. Universidad de los Andes, Programa de Alto Gobierno. Workshop on Corruption. Bogotá, Colombia. Presenter."
+  - "2012. Northwestern University, Political Parties Working Group. Presenter."
+  - "2012. University of Chicago Law School. Conference on Law and Development of Middle-Income Countries. Discussant."
+  - "2012. Northwestern University School of Law, Faculty External Workshop Series. Presenter."
+  - "2012. Yale University, Yale Center for Globalization. Global Commission on Elections, Democracy and Security Workshop."
+  - "2012. University of Texas at Austin. Comparative Politics Workshop. Presenter."
+  - "2011. International Anti-Corruption Summit, United Nations (UNODC) and Government of Colombia, Procuraduría General de la Nación. Bogotá, Colombia. Presenter."
+  - "2011. Northwestern University and University of Chicago, Political Economy in the Chicago Area (PECA) Conference. Gleacher Center. Presenter."
+  - "2011. Juan March Institute, Center for Advanced Study in the Social Sciences. Madrid, Spain. Presenter and discussant."
+  - "2011. Universidad de los Andes, Programa de Alto Gobierno. Workshop on Corruption. Bogotá, Colombia. Presenter."
+  - "2011. University of California, Los Angeles. Comparative Politics Seminar. Presenter."
+  - "2011. Asian Development Bank, Conference on Development Issues in Asia. Manila, Philippines. Presenter."
+  - "2010. Harvard-MIT Political Economy Seminar. Presenter."
+  - "2010. Public Choice Seminar, George Mason University. Presenter."
+  - "2010. Higher School of Economics, National Research University, Moscow, RCI Workshop Faculty and Presenter."
+  - "2009. University of Illinois at Urbana-Champaign, Comparative Politics Workshop. Presenter."
+  - "2008. Peking University, China Center for Economic Research, RCI Workshop Faculty and Presenter."
+  - "2008. Yale University, Leitner Political Economy Seminar. Presenter."
+  - "2008. Northwestern University and University of Chicago, Political Economy in the Chicago Area (PECA) Conference. Gleacher Center. Presenter."
+  - "2008. Singapore National University, RCI Workshop Faculty and Presenter."
+  - "2007. University of British Columbia, Peter Wall Center for Advanced Studies, Corruption and Democracy Conference. Presenter."
+  - "2007. Yale University. Elections and Political Identities in New Democracies Conference, Yale Program on Democracy, Discussant."
+  - "2007. University of Wisconsin at Madison, Political Economy Colloquium. Presenter."
+  - "2007. University of Chicago. Political Economy Workshop. Presenter."
+  - "2006. University of Chicago. Ronald Coase Institute Alumni Conference. Presenter."
+  - "2006. MIT-Utah Vote Fraud Conference. Salt Lake City, UT. Presenter."
+  - "2006. Harvard University. David Rockefeller Center for Latin American Studies. Presenter."
+  - "2005. Yale University. Comparative Politics Seminar. Presenter."
+  - "2005. Princeton University. International Relations Colloquium. Presenter."
+
+advising:
+  - "External Examiner for Felipe Torres Raposo, Oxford University, United Kingdom, Department of Politics and International Relations, Pembroke College. DPhil 2022."
+  - "External Examiner for Alejandro García Magos, University of Toronto, Toronto, Canada, Department of Political Science, PhD 2019."
+  - "Dissertation committee member for Adrián Lucardi, Washington University, St. Louis, MO, USA, Department of Political Science, PhD 2016."
+  - "Department of Political Science (University of Chicago)"
+  - "Dissertation committee member for Juan Fernando Ibarra, PhD 2016 (now Faculty Member, Department of Political Science, Colgate University)"
+  - "Dissertation committee member for José Antonio Hernández Company, PhD 2015 (now Assistant Professor at School of Government, Instituto Tecnológico de Monterrey, Mexico City)"
+  - "Dissertation committee member for Lauren Duquette-Rury, PhD 2011 (now Assistant Professor of Sociology, University of California, Los Angeles)"
+  - "Dissertation committee member for Manuel Viedma, PhD 2014"
+  - "Dissertation committee member for Milena Ang, PhD candidate"
+  - "Dissertation committee member for Chris Haid, PhD candidate"
+  - "Dissertation committee member for Dina Rasheed, PhD candidate"
+  - "Other Departments (University of Chicago)"
+  - "Dissertation committee member for Miguel Díaz, Booth School of Business, PhD 2009 (now Economics Researcher at the Central Bank of Mexico)"
+  - "Dissertation committee member for Jorge Fábrega, Harris School of Public Policy, PhD 2009 (now Assistant Professor of Government, Universidad Adolfo Ibáñez, Santiago, Chile)"
+  - "Dissertation committee member for Dimitris Batzilis, Department of Economics, PhD 2015"
+
+media_coverage:
+  - "2024. VoxDev – Institutions and Political Economy. “Can social media be harnessed to bolster electoral accountability?” (with José Ramón Enríquez, Horacio Larreguy, and John Marshall)."
+  - "2021. VoxDev – Institutions and Political Economy. “The impact of human error in vote tallies: Evidence from Mexico” (with Cristian Challú and Enrique Seira)."
+  - "2017. El Tiempo (Colombia). Interviewed by Martha Soto, editor, Research Unit. “Corrupción: ese mal insufrible” (video, in Spanish)."
+  - "2017. Vox. “A fresh solution to the ‘vetting’ problem: make refugees accountable for one another,” April 10, with Tom Ginsburg."
+  - "2014. SAGE Social Science Space. “Tracking the Provenance of Corruption” (interview by Michael Todd)."
+  - "2012. Enfoque, Sunday magazine of Reforma newspaper, Mexico, “5 Millones de Votos, ¿Comprados?”, July 15 (in Spanish). English version in The Monkey Cage."
+  - "2011. Esquire Magazine, Russia, “No Choice,” December 1 (in Russian)."
+  - "2009. The Washington Post, “What’s the Big Idea?” Sunday Outlook, July 5, p.B5."
+
+institutional_service:
+  ITAM:
+    - "Gender Violence Faculty Training Committee, ITAM (2022)"
+    - "Editorial Committee Member, ITAM Center for Covid-19 (2020-)"
+    - "Chair, Department of Political Science (2018-)"
+    - "Member, Committee for the Validation of Foreign Studies and Degrees (2017-)"
+    - "Member, Institutional Review Board (2015-)"
+  University of Chicago:
+    - "Methods Reform Committee, Department of Political Science, 2012."
+    - "Search Committee, Target of Opportunity, Department of Political Science, 2007-2008."
+    - "Admissions Committee, Department of Political Science, 2007 and 2012."
+    - "Comparative Politics Workshop, Faculty Supervisor, 2012-Present."
+    - "Center for Latin American Studies, Steering Committee. 2008-2010."
+    - "Center for Latin American Studies, Faculty Associate, 2006-Present."
+    - "Katz Center for Mexican Studies, Faculty Associate, 2006-Present."
+    - "Committee on International Relations, Faculty Associate 2006-2009."
+    - "Tinker Visiting Professorship Sitting Committee, 2006-2007 and 2007-2008."
+    - "Lecturer in Latin American Studies Search Committee, Center for Latin American Studies, 2006-2007 and 2007-2008."
+    - "Goettler Political Institutions Prize committee, April 2007."
+
+conference_presentations:
+  - "2005– American Political Science Association, Midwest Political Science Association, International Studies Association, Latin American Studies Association, Society for Institutional and Organizational Economics, Social Science History Association, and International Society for New Institutional Economics annual meetings. (Not all conferences attended in all years.)"
+  - "2013. Empirical Implications of Theoretical Models mini-conference, Chicago."
+
+professional_memberships:
+  - American Political Science Association
+  - American Economic Association
+  - Society for Institutional and Organizational Economics
+
+other_experience:
+  - role: Analyst
+    organization: McKinsey & Company
+    years: "1996–1998"
+    detail: "Fuels policy, optimization modeling of the Mexican energy sector, financial valuation of public companies."
+    note: "Hugo García Prize, 1998 (awarded to one member of the Analyst class)."

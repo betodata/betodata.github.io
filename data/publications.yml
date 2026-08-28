@@ -1,0 +1,382 @@
+# ---------------------------------------------------------------------------
+# publications.yml — THE single source of truth.
+#
+# Edit this file once. The website research page AND the PDF CV are both
+# rendered from it. To add a paper, add a block at the top of the right list.
+#
+# Fields:
+#   year        required. Integer. Use the publication year.
+#   title       required. Plain text; no quotes needed inside unless nested.
+#   coauthors   list. Omit for solo-authored work. Your own name is implicit.
+#   venue       journal / press / book. Shown in both CV and web.
+#   volume      e.g. "22(4): 1678-1722". Optional.
+#   status      omit if published. Or: forthcoming | under-review | working-paper
+#   note        e.g. award text. Appears in CV and web.
+#   links       [web only] list of {type, url}. The CV ignores these.
+#               types: journal | preprint | pdf | replication | data | code
+#                      | appendix | preregistration | media | toc | order | review
+#   abstract    [web only] optional; enables the expandable abstract on the site.
+#   tags        [web only] optional; used for filtering on the research page.
+#
+# STATUS OF THIS DRAFT: citations transcribed from simpser_cv_july_2026.docx;
+# links merged in from the current Wix site. Items marked TODO:LINK have no
+# public link yet. Replication links are almost entirely missing — see the
+# audit note at the bottom of this file.
+# ---------------------------------------------------------------------------
+
+articles:
+
+  - year: 2026
+    title: Satisfaction with democracy predicts democratic behaviors
+    coauthors: [Andrés Santos Vargas, Enrique Seira]
+    venue: Proceedings of the National Academy of Sciences
+    venue_short: PNAS
+    volume: "123(14)"
+    links:
+      - {type: journal, url: "https://www.pnas.org/doi/10.1073/pnas.2517671123"}
+      # TODO:LINK preprint, replication package
+    tags: [democracy, behavior, experiments]
+
+  - year: 2025
+    title: The impact of confounders, spillovers and interactions on social distancing policy effects estimates
+    coauthors: [José Ramón Enríquez, Horacio Larreguy]
+    venue: Scientific Reports
+    volume: "15: 34350"
+    former_title: Confounding, Spillovers and Interactions Influence Estimates of Social Distancing Policy Effects
+    links:
+      - {type: journal, url: "https://doi.org/10.1038/s41598-025-16861-1"}
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3980184"}
+      # TODO:LINK replication package
+    tags: [covid, methods]
+
+  - year: 2025
+    title: Corruption, Norms, and the Law
+    venue: "Handbook of New Institutional Economics"
+    editors: Ménard and Shirley, eds.
+    publisher: Springer Nature
+    type: chapter
+    links: []          # TODO:LINK
+    tags: [corruption, norms]
+
+  - year: 2024
+    title: Interacting as equals reduces partisan polarization in Mexico
+    coauthors: [Kenneth Greene, Erin Rossiter, Enrique Seira]
+    venue: Nature Human Behaviour
+    volume: "9: 147-155"
+    year_online: 2024      # published online 11 Nov 2024; issue year is 2025 — see Q
+    note: >-
+      Recipient of the Best Paper Award, Elections, Public Opinion, and Voting
+      Behavior Section, American Political Science Association.
+    former_title: "Interacting as equals: How contact can promote tolerance among opposing partisans"
+    links:
+      - {type: journal, url: "https://www.nature.com/articles/s41562-024-02043-y"}
+      - {type: preprint, url: "https://dx.doi.org/10.2139/ssrn.4456223"}
+      - {type: replication, url: "https://osf.io/f7bzy/", label: "Data & code (OSF)"}
+    tags: [polarization, intolerance, experiments]
+
+  - year: 2024
+    title: "Mass Political Information on Social Media: Facebook Ads, Electorate Saturation, and Electoral Accountability in Mexico"
+    coauthors: [José Ramón Enríquez, Horacio Larreguy, John Marshall]
+    venue: Journal of the European Economic Association
+    volume: "22(4): 1678-1722"
+    former_title: "Online Political Information: Facebook Ads, Electorate Saturation, and Electoral Accountability in Mexico"
+    links:
+      - {type: journal, url: "https://doi.org/10.1093/jeea/jvae011"}
+      - {type: media, url: "https://voxdev.org/topic/institutions-political-economy/can-social-media-be-harnessed-bolster-electoral-accountability", label: "VoxDev"}
+      - {type: media, url: "https://www.povertyactionlab.org/evaluation/online-political-information-facebook-ads-electoral-saturation-and-electoral", label: "J-PAL"}
+      # TODO:LINK replication package
+    tags: [accountability, information, experiments]
+
+  - year: 2022
+    title: "The Political Economy of Carbon Pricing: Lessons from the Mexican Carbon Tax Experience for the Mexican Cap-and-Trade System"
+    coauthors: [Juan Carlos Belausteguigoitia, Vidal Romero]
+    venue: "Towards an Emissions Trading System in Mexico: Rationale, Governance, and Design Perspectives"
+    editors: Simone Lucatello, ed.
+    publisher: Springer Nature
+    type: chapter
+    links:
+      - {type: pdf, url: "https://www.dropbox.com/s/47oqb0uu6av3wpr/Belausteguigoitia%20et%20al%20-%202021%20-%20Carbon%20tax%20Mexico%20book%20chapter.pdf?dl=0"}   # TODO: rehost in repo
+    tags: [climate, political-economy]
+
+  - year: 2021
+    title: "Voting with One's Neighbors: Evidence from Migration within Mexico"
+    coauthors: [Frederico Finan, Enrique Seira]
+    venue: Journal of Public Economics
+    volume: "202: 104495"
+    links:
+      - {type: journal, url: "https://doi.org/10.1016/j.jpubeco.2021.104495"}
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3760669"}
+      # TODO:LINK replication package
+    tags: [voting, migration]
+
+  - year: 2021
+    title: "Do You Have COVID-19? How to Increase the Use of Contact Tracing Apps"
+    coauthors: [Déborah Martínez V., Cristina Parilli, Ana María Rojas M., Carlos Scartascini]
+    venue: PLoS ONE
+    volume: "16(7): e0253490"
+    links:
+      - {type: journal, url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253490"}
+    tags: [covid, norms, experiments]
+
+  - year: 2021
+    title: "Let's (Not) Get Together! The Role of Social Norms on Social Distancing during COVID-19"
+    coauthors: [Carlos Scartascini, Déborah Martínez, Cristina Parilli]
+    venue: PLoS ONE
+    volume: "16(3): e0247454"
+    links:
+      - {type: journal, url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0247454"}
+    tags: [covid, norms, experiments]
+
+  - year: 2020
+    title: "The Quality of Vote Tallies: Causes and Consequences"
+    coauthors: [Cristian Challú, Enrique Seira]
+    venue: American Political Science Review
+    volume: "114(4): 1071-1085"
+    links:
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3426568"}
+      - {type: journal, url: "https://doi.org/10.1017/S0003055420000398"}
+      - {type: replication, url: "https://doi.org/10.7910/DVN/4M0HEN", label: "Replication code (APSR Dataverse)"}
+      - {type: media, url: "https://voxdev.org/topic/institutions-political-economy/impact-human-error-vote-tallies-evidence-mexico", label: "VoxDev summary"}
+    tags: [elections, integrity]
+
+  - year: 2020
+    title: "The Culture of Corruption Across Generations: An Empirical Study of Bribery Attitudes and Behavior"
+    venue: Journal of Politics
+    volume: "82(4): 1373-1389"
+    note: >-
+      Recipient of the SAGE Best Paper Award, Comparative Politics Section,
+      American Political Science Association.
+    former_title: Intergenerational Persistence of Attitudes towards Corruption
+    links:
+      - {type: journal, url: "https://doi.org/10.1086/708501"}
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2241295"}
+      - {type: media, url: "http://connection.sagepub.com/blog/industry-news/2014/10/29/tracking-the-provenance-of-corruption/", label: "SAGE interview"}
+    tags: [corruption, norms]
+
+  - year: 2020
+    title: Electoral Handouts and Electoral Integrity during Mexico's 2018 Elections
+    coauthors: [Kenneth Greene]
+    venue: Política y Gobierno
+    volume: "XXVII(2)"
+    links:
+      - {type: pdf, url: "https://www.dropbox.com/s/f249jbgw5zuqmo9/GreeneSimpserPyGfinal.pdf?dl=0"}   # TODO: rehost in repo
+    tags: [elections, clientelism]
+
+  - year: 2018
+    title: "Circles of Trust: A Proposal for Better Migrant Screening"
+    coauthors: [Tom Ginsburg]
+    venue: Journal of Legal Studies
+    volume: "47(S1): 229-245"
+    links:
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2914634"}
+      - {type: media, url: "http://www.vox.com/the-big-idea/2017/4/10/15226110/vetting-refugees-terrorism-security-borders", label: "Vox"}
+    tags: [migration, institutions]
+
+  - year: 2018
+    title: "Dead but not Gone: Contemporary Legacies of Communism, Imperialism, and Authoritarianism"
+    coauthors: [Dan Slater, Jason Wittenberg]
+    venue: Annual Review of Political Science
+    volume: "21: 419-439"
+    links:
+      - {type: journal, url: "https://doi.org/10.1146/annurev-polisci-062615-020900"}
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2993580"}   # NB: a second SSRN id (3197104) also exists for this paper — confirm which
+    tags: [historical-legacies]
+
+  - year: 2017
+    title: "When the (Facebook) Status and the (Socioeconomic) Status Went down to the Street: Communications, Political Involvement and the Climate of Opinion in the Summer 2011 Protest"
+    coauthors: [Jacob Shamir, Yossi David]
+    venue: Megamot
+    links:
+      - {type: journal, url: "https://www.megamot-journal.org.il/"}   # TODO: exact article URL
+    tags: [protest, public-opinion]
+
+  - year: 2017
+    title: Electoral Clientelism and Vote Buying in Mexico
+    venue: "Fortalezas y Debilidades del Sistema Electoral Mexicano 1990-2015. Perspectiva Federal y Local"
+    editors: Ugalde and Hernández Quintana, eds.
+    publisher: Tribunal Electoral del Poder Judicial de la Federación e Integralia
+    type: chapter
+    language: Spanish
+    links:
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3032738"}
+    tags: [clientelism, elections]
+
+  - year: 2016
+    title: "The Political Economy of Social Spending in Local Government: A Study of the 3x1 Program in Mexico"
+    coauthors: [Juan Fernando Ibarra, Lauren Duquette-Rury, José Antonio Hernández Company]
+    venue: Latin American Research Review
+    volume: "51(1): 62-83"
+    links:
+      - {type: pdf, url: "/files/papers/3x1-program-larr-2016.pdf"}   # rescued from Wix, now self-hosted
+    tags: [development, local-government]
+
+  - year: 2015
+    title: Electoral Manipulation as Bureaucratic Control
+    coauthors: [Scott Gehlbach]
+    venue: American Journal of Political Science
+    volume: "59(1): 212-224"
+    links:
+      - {type: journal, url: "https://doi.org/10.1111/ajps.12122"}
+      - {type: preprint, url: "http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2266988"}
+    tags: [elections, institutions]
+
+  - year: 2012
+    title: "Does Electoral Manipulation Discourage Voter Turnout? Evidence from Mexico"
+    venue: Journal of Politics
+    volume: "74(3): 782-795"
+    links:
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2047498"}
+      - {type: appendix, url: "https://www.journals.uchicago.edu/doi/suppl/10.1017/S0022381612000333"}
+    tags: [elections, turnout]
+
+  - year: 2012
+    title: Can International Election Monitoring Harm Governance?
+    coauthors: [Daniela Donno]
+    venue: Journal of Politics
+    volume: "74(2): 501-513"
+    links:
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2047555"}
+      - {type: appendix, url: "https://www.journals.uchicago.edu/doi/suppl/10.1017/S002238161100168X"}
+    tags: [elections, monitoring]
+
+  - year: 2011
+    title: Comparing the Accuracy of RDD Telephone Surveys and Internet Surveys Conducted with Probability and Non-Probability Samples
+    coauthors: [Jon Krosnick, and others]
+    venue: Public Opinion Quarterly
+    volume: "75(4): 709-747"
+    links:
+      - {type: journal, url: "http://poq.oxfordjournals.org/content/75/4/709.short"}
+      - {type: appendix, url: "http://poq.oxfordjournals.org/content/75/4/709/suppl/DC1"}
+    tags: [survey-methods]
+
+  - year: 2008
+    title: Unintended Consequences of Election Monitoring
+    venue: "Election Fraud: Detecting and Deterring Electoral Manipulation"
+    editors: Michael Alvarez, Thad Hall, and Susan Hyde, eds.
+    publisher: Brookings Institution Press
+    type: chapter
+    links:
+      - {type: order, url: "http://www.amazon.com/Election-Fraud-Detecting-Manipulation-Administration/dp/081570139X"}
+    tags: [elections, monitoring]
+
+
+books:
+
+  - year: 2014
+    title: Constitutions in Authoritarian Regimes
+    role: coedited
+    coauthors: [Tom Ginsburg]
+    publisher: Cambridge University Press
+    series: Comparative Constitutional Law and Policy
+    links:
+      - {type: pdf, url: "/files/books/constitutions-toc.pdf", label: "Table of contents"}
+      - {type: preprint, url: "http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2427794", label: "Chapter 1"}
+      - {type: order, url: "http://www.amazon.com/Constitutions-Authoritarian-Regimes-Comparative-Constitutional/dp/1107663946"}
+      - {type: review, url: "http://www.lpbr.net/2014/08/constitutions-in-authoritarian-regimes.html", label: "Law & Politics Book Review"}
+
+  - year: 2013
+    title: "Why Governments and Parties Manipulate Elections: Theory, Practice, and Implications"
+    publisher: Cambridge University Press
+    series: Political Economy of Institutions and Decisions
+    links:
+      - {type: pdf, url: "/files/books/why-governments-toc.pdf", label: "Table of contents"}
+      # NOTE: the current Wix site points "Chapter 1" for BOTH books at SSRN
+      # abstract_id=2427794. One of those is wrong. See question 6.
+      - {type: order, url: "http://www.amazon.com/Why-Governments-Parties-Manipulate-Elections/dp/1107448689"}
+
+
+working_papers:
+
+  - title: "Promoting Civic Values at Scale: Evidence from a Randomized Controlled Trial in Mexico"
+    coauthors: [Enrique Seira]
+    links: []          # TODO:LINK
+    tags: [civic-values, experiments]
+
+  - title: "Strengthening Accountability for Climate Change: Experimental evidence on interventions to encourage pro-climate political behaviors among Mexican citizens"
+    coauthors: [Juan Carlos Belausteguigoitia, Vidal Romero]
+    links: []          # TODO:LINK
+    tags: [climate, experiments]
+
+  - title: Social Categorization
+    coauthors: [Karine Van der Straeten]
+    links: []          # TODO:LINK
+
+  - title: Accountability under Polarization
+    coauthors: [José Ramón Enríquez, Horacio Larreguy, John Marshall]
+    links: []          # TODO:LINK
+
+  - title: "Estimating the effect of norms nudges: a study of pandemic mask wearing in Colombia"
+    coauthors: [Déborah Martínez V., Ana María Rojas M., Carlos Scartascini]
+    links: []          # TODO:LINK
+
+  - title: Information, Trust, Engagement, and WhatsApp in Mexico and Latin America
+    coauthors: [Noam Lupu, Elizabeth Zechmeister]
+    note: Recipient of a WhatsApp Misinformation and Social Science Research Award.
+    links: []          # TODO:LINK
+
+  - title: "Climate of Opinion as a Driver of Collective Action: Evidence from the 2011 Israeli Protest Movement"
+    coauthors: [Yossi David, Jacob Shamir]
+    links:
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3426618"}
+
+  - title: "When do Sensitive Questions Elicit Truthful Answers? Theory and Evidence with Application to the RRT and List Experiment"
+    links:
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3032684"}
+
+  - title: "Donating Time for Democracy: A Field Experimental Study of Citizen Provision of Political Public Goods"
+    coauthors: [Andrei Gomberg, Ulrike Malmendier, Enrique Seira]
+    note: Recipient of a J-PAL Governance Initiative Grant, 2016-2017.
+    links:
+      - {type: media, url: "https://www.povertyactionlab.org/evaluation/donating-time-democracy-encouraging-citizen-participation-electoral-work-mexico", label: "J-PAL project page"}
+
+  - title: "Who Has a Use for the Law? A Theory of the Political Roots of the Rule of Law"
+    coauthors: [Andrei Gomberg, César Martinelli]
+    links: []          # TODO:LINK
+
+  - title: "Fraud is Not a Last Resort: Institutional Development and the Sequencing of Electoral Manipulation Tactics, with Evidence from Mexico"
+    coauthors: [José Antonio Hernández Company]
+    links: []          # TODO:LINK
+
+  - title: The Political Origins of Subnational Authoritarianism
+    coauthors: [Juan Fernando Ibarra]
+    links: []          # TODO:LINK
+
+
+other_publications:
+
+  - year: 2019
+    title: How to Un-Rig an Election
+    venue: Journal of Democracy
+    volume: "30(1): 172-175"
+    kind: Review essay
+    reviewed_work: "Nic Cheeseman and Brian Klaas, How to Rig an Election (Yale University Press, 2018)"
+    links: []
+
+  - year: 2017
+    title: Election Rigging
+    venue: The SAGE Encyclopedia of Political Behavior
+    editors: Fathali Moghaddam, ed.
+    kind: Encyclopedia entry
+    links:
+      - {type: journal, url: "http://dx.doi.org/10.4135/9781483391144.n106"}
+
+  - year: 2008
+    title: "Review of Andreas Schedler, ed., Electoral Authoritarianism: The Dynamics of Unfree Competition"
+    venue: Perspectives on Politics
+    volume: "6 (June): 212-13"
+    kind: Book review
+    links: []
+
+
+# ---------------------------------------------------------------------------
+# LINK AUDIT (from the current site + CV)
+#
+#  * 2 links are SSRN "deliverypdf" URLs, which are session-scoped and will
+#    already be dead for visitors. They need replacing with abstract-page URLs.
+#  * 2 links are Dropbox /s/ share links, which Dropbox has been deprecating.
+#    Those PDFs should be hosted in the repo instead.
+#  * 1 link is a bit.ly shortlink — opaque and a single point of failure.
+#  * 0 replication packages are currently linked anywhere, for any paper.
+#    This is the single biggest gap relative to what you asked for.
+#  * Both books point at the same SSRN "Chapter 1" abstract.
+# ---------------------------------------------------------------------------

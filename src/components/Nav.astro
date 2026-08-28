@@ -1,0 +1,24 @@
+---
+const { current } = Astro.props;
+const items = [
+  { href: '/',          label: 'Home',     key: 'home' },
+  { href: '/research',  label: 'Research', key: 'research' },
+  { href: '/teaching',  label: 'Teaching', key: 'teaching' },
+  { href: '/cv.pdf',    label: 'CV',       key: 'cv', external: true },
+];
+---
+<nav class="nav">
+  <a class="mk" href="/">Alberto Simpser</a>
+  <ul>
+    {items.map((i) => (
+      <li>
+        <a
+          href={i.href}
+          aria-current={current === i.key ? 'page' : undefined}
+          {...(i.external ? { target: '_blank', rel: 'noopener' } : {})}
+        >{i.label}</a>
+      </li>
+    ))}
+    <li><a href="mailto:alberto.simpser@itam.mx">Contact</a></li>
+  </ul>
+</nav>

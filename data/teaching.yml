@@ -1,0 +1,119 @@
+# ---------------------------------------------------------------------------
+# teaching.yml — courses. Drives the teaching page AND the CV teaching section.
+#
+# To post a new syllabus: drop the PDF in  static/files/syllabi/  and add a
+# line under  materials:  . Nothing else to touch.
+#
+#   current: true   -> shown prominently on the teaching page
+#   level:          -> undergraduate | graduate | short-course
+# ---------------------------------------------------------------------------
+
+institutions:
+
+  - name: ITAM
+    current: true
+    courses:
+
+      - title: Topics in Data for Public Policy
+        title_es: ""
+        level: undergraduate
+        format: lecture course
+        program: Data Science major
+        years: "2024–"
+        current: true
+        description: ""     # [web] optional 1–2 sentences
+        materials: []       # TODO: add current syllabus
+
+      - title: Causal Inference
+        title_es: Métodos de Investigación Aplicada
+        level: undergraduate
+        format: lecture course
+        years: "2014–"
+        current: true
+        materials:
+          - {label: "Syllabus (Spring 2018)", url: "/files/syllabi/causal-inference-itam-s2018.pdf"}
+          - {label: "Midterm 1 (Spring 2018)", url: "/files/syllabi/causal-inference-midterm1-s2018.pdf"}
+          - {label: "Midterm 2 (Spring 2018)", url: "/files/syllabi/causal-inference-midterm2-s2018.pdf"}
+        # TODO: 2018 is the most recent syllabus on the old site. Replace with current?
+
+      - title: Culture and Development
+        level: undergraduate
+        format: seminar
+        years: "2017–"
+        current: true
+        materials: []
+
+      - title: Political Economy of Corruption and Development
+        title_es: Economía Política II
+        level: undergraduate
+        format: lecture course
+        years: "2014–"
+        current: true
+        materials:
+          - {label: "Syllabus (Spring 2018)", url: "/files/syllabi/polecon-corruption-itam-s2018.pdf"}
+
+      - title: Culture, Historical Legacies, and Political Economy
+        title_es: Seminario de Titulación
+        level: undergraduate
+        format: upper-level seminar
+        years: "2015–"
+        current: true
+        materials: []
+
+      - title: Experiments in Political Economy
+        title_es: Seminario de Titulación
+        level: undergraduate
+        format: upper-level seminar
+        years: "2016–"
+        current: true
+        materials: []
+
+      - title: Institutional Economics
+        title_es: Economía Institucional
+        level: graduate
+        format: seminar
+        program: M.A. in Applied Economics
+        years: "2017–"
+        current: true
+        materials:
+          - {label: "Syllabus (Spring 2017)", url: "/files/syllabi/institutional-economics-itam-s2017.pdf"}
+
+  - name: University of Chicago
+    current: false
+    years: "2006–2014"
+    courses:
+
+      - {title: Causal Inference, level: graduate, format: PhD seminar, years: "2014", materials: []}
+      - title: Political Economy of Corruption and Development
+        level: graduate
+        format: PhD seminar
+        years: "2012, 2013, 2014"
+        materials:
+          - {label: "Syllabus (Spring 2014)", url: "/files/syllabi/polecon-corruption-uchicago-s2014.pdf"}
+      - title: Undemocratic Elections
+        level: graduate
+        format: PhD seminar
+        years: "2009, 2012, 2013"
+        materials:
+          - {label: "Syllabus (Spring 2013)", url: "/files/syllabi/undemocratic-elections-uchicago-s2013.pdf"}
+      - {title: "Political Economy of Development: Selected Topics", level: graduate, format: PhD seminar, years: "2007, 2008, 2011", materials: []}
+      - {title: Research Approaches in Political Science, level: graduate, format: PhD seminar, years: "2007, 2008", materials: []}
+      - {title: Introduction to the Political Economy of Development, level: undergraduate, format: lecture course, years: "2007–2009, 2011–2013", materials: []}
+      - {title: Social Science Inquiry, level: undergraduate, format: lecture course, years: "2007–2009, 2011–2014", materials: []}
+
+  - name: Universidad de Los Andes
+    location: Bogotá, Colombia
+    current: false
+    courses:
+      - {title: "Corruption, Government, and Development", level: short-course, years: "Summer 2011, 2012, 2014", materials: []}
+
+  - name: Oxford / Nuffield Center for Experimental Social Sciences
+    location: Santiago, Chile
+    current: false
+    courses:
+      - {title: Causal Inference and Experimental Design, level: short-course, years: "Summer 2018", materials: []}
+
+# [web] Optional block for the teaching page.
+advising_note: |
+  I am happy to hear from ITAM students interested in political economy,
+  experimental methods, or causal inference.

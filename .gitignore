@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+cv/.build/
+cv/data.json
+public/cv.pdf
+public/cv-short.pdf

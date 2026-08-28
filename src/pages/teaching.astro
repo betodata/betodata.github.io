@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { teaching } from '../lib/data.js';
+
+const institutions = teaching.institutions;
+---
+<Base current="teaching" theme="light" title="Teaching"
+      description="Courses taught by Alberto Simpser at ITAM and the University of Chicago, with syllabi.">
+  <div class="page-head">
+    <h1>Teaching</h1>
+    <p>
+      Courses in political economy, causal inference, and experimental methods.
+      Syllabi and course materials are linked where available.
+    </p>
+  </div>
+
+  <div class="list">
+    {institutions.map((inst) => (
+      <>
+        <p class="grp">
+          {inst.name}{inst.location ? ` · ${inst.location}` : ''}{inst.years ? ` · ${inst.years}` : ''}
+        </p>
+        {inst.courses.map((c) => (
+          <article class="entry">
+            <div class="yr">{c.years ?? ''}</div>
+            <div>
+              <h3>{c.title}</h3>
+              <p class="who">
+                {[c.format, c.level, c.program].filter(Boolean).join(' · ')}
+                {c.title_es ? ` · ${c.title_es}` : ''}
+              </p>
+              {c.description ? <p class="ven">{c.description}</p> : null}
+              {(c.materials || []).length ? (
+                <div class="chips">
+                  {c.materials.map((m) => (
+                    <a href={m.url} target="_blank" rel="noopener">{m.label}</a>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </article>
+        ))}
+      </>
+    ))}
+  </div>
+</Base>

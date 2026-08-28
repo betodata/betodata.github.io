@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# profile.yml — identity, contact, and bio.
+# Used by: website (all pages) + PDF CV (header block).
+# ---------------------------------------------------------------------------
+
+name: Alberto Simpser
+title: Professor of Political Science
+department: Department of Political Science
+institution: ITAM
+location: Mexico City
+
+positions_line: Professor and Chair, Department of Political Science, ITAM
+
+address:
+  lines:
+    - ITAM
+    - Río Hondo No. 1
+    - México CDMX 01080
+    - México
+
+email: alberto.simpser@itam.mx
+homepage: https://www.albertosimpser.com
+
+profiles:
+  google_scholar: https://scholar.google.com.mx/citations?user=e8hYQXgAAAAJ&hl=en
+  ssrn: http://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1049073
+  orcid: ""        # TODO: add if you have one
+  github: ""       # TODO: for replication repositories
+  bluesky: ""      # TODO: optional
+  osf: ""          # TODO: optional, for pre-registrations
+
+# [web] Shown on the landing page. Keep to 2–4 short paragraphs.
+bio: |
+  I am Professor and Chair of the Department of Political Science at ITAM in
+  Mexico City. My research examines political intolerance, social norms,
+  governance, accountability, corruption, and electoral manipulation, mostly
+  through field experiments and large-scale observational work in Mexico and
+  Latin America.
+
+  Before joining ITAM I taught at the University of Chicago. I have held
+  fellowships at the Institute for Advanced Study in Toulouse, the Hoover
+  Institution at Stanford, and the Niehaus Center at Princeton.
+
+  I hold a Ph.D. in Political Science and an M.A. in Economics from Stanford
+  University, and a B.Sc. in Engineering Sciences from Harvard College.
+
+# [web] One-line strapline under the name on the landing page.
+tagline: Elections, corruption, social norms, and the political economy of accountability.
+
+research_interests:
+  - Political intolerance and polarization
+  - Social norms and civic behavior
+  - Corruption and its cultural transmission
+  - Electoral manipulation and electoral integrity
+  - Accountability and information
+  - Political economy of development
+
+languages: Fluent in Spanish, English, and Hebrew; basic French.
