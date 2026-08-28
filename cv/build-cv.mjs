@@ -91,6 +91,15 @@ const fmt = (list) => list.map((i) => {
 const featured = pubs.articles.filter((a) => a.featured);
 const shortArticles = featured.length ? featured : pubs.articles.slice(0, 6);
 
+// Pulls a leading year or year-range off a flat CV line so Typst can set it
+// in the left column. Entries with no year ("Reviewer for ...") return an
+// empty year rather than an orphaned full stop.
+function splitYear(line) {
+  const m = /^\s*(\d{4}(?:\s*[–-]\s*(?:\d{4}|present)?)?)[.,]?\s+(.*)$/.exec(line);
+  if (!m) return { year: '', text: smartQuotes(line.trim()) };
+  return { year: m[1].replace(/\s+/g, ''), text: smartQuotes(m[2].trim()) };
+}
+
 const courses = teach.institutions.map((inst) => ({
   name: inst.name + (inst.location ? ` (${inst.location})` : ''),
   years: inst.years ?? null,
@@ -117,17 +126,20 @@ const data = {
   other:     fmt(pubs.other_publications),
   short_articles: fmt(shortArticles),
   short_books:    fmt(pubs.books),
-  grants: cv.grants,
-  awards: cv.fellowships_and_awards,
-  service: cv.service_to_discipline.map((s) =>
-    s.role ? `${s.year}. ${s.role}, ${s.organization}.` : `${s.year}. ${s.note}.`),
-  institutional: cv.institutional_service,
-  talks: cv.invited_presentations,
-  conferences: cv.conference_presentations,
+  grants: cv.grants.map(splitYear),
+  awards: cv.fellowships_and_awards.map(splitYear),
+  service: cv.service_to_discipline.map((s) => ({
+    year: (s.year || '').replace(/\.$/, ''),
+    text: smartQuotes(s.role ? `${s.role}, ${s.organization}.` : `${s.note}.`),
+  })),
+  institutional: Object.fromEntries(Object.entries(cv.institutional_service)
+    .map(([k, v]) => [k, v.map((x) => smartQuotes(x))])),
+  talks: cv.invited_presentations.map(splitYear),
+  conferences: cv.conference_presentations.map(splitYear),
   teaching: courses,
   memberships: cv.professional_memberships,
-  advising: cv.advising,
-  media: cv.media_coverage,
+  advising: cv.advising.map((a) => smartQuotes(a)),
+  media: cv.media_coverage.map(splitYear),
   experience: cv.other_experience,
   languages: profile.languages,
   generated: new Date().toISOString().slice(0, 10),
@@ -139,9 +151,11 @@ const out = path.join(ROOT, 'public');
 fs.mkdirSync(out, { recursive: true });
 
 for (const [src, dst] of [['cv.typ', 'cv.pdf'], ['cv-short.typ', 'cv-short.pdf']]) {
+  // --ignore-system-fonts restricts Typst to its own embedded faces, so the
+  // PDF is byte-identical here and on CI regardless of what is installed.
   execFileSync('typst', [
     'compile', path.join(ROOT, 'cv', src), path.join(out, dst),
-    '--root', ROOT, '--font-path', path.join(ROOT, 'cv', 'fonts'),
+    '--root', ROOT, '--ignore-system-fonts',
   ], { stdio: 'inherit' });
   const kb = (fs.statSync(path.join(out, dst)).size / 1024).toFixed(0);
   console.log(`  cv: ${dst} (${kb} KB)`);

@@ -1,5 +1,8 @@
 ---
 const { current } = Astro.props;
+// On the landing page the name already appears in large type below, so the
+// wordmark would be a redundant second billing. Every other page keeps it.
+const showMark = current !== 'home';
 const items = [
   { href: '/',          label: 'Home',     key: 'home' },
   { href: '/research',  label: 'Research', key: 'research' },
@@ -8,7 +11,9 @@ const items = [
 ];
 ---
 <nav class="nav">
-  <a class="mk" href="/">Alberto Simpser</a>
+  {showMark
+    ? <a class="mk" href="/">Alberto Simpser</a>
+    : <span class="mk-spacer" aria-hidden="true"></span>}
   <ul>
     {items.map((i) => (
       <li>

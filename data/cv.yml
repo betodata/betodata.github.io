@@ -70,7 +70,7 @@ service_to_discipline:
   - {year: "2017", role: Committee Member, organization: "McGillivray Best Paper Award, Political Economy Section, American Political Science Association"}
   - {year: "2016", role: Co-Chair, organization: "Political Economy Section Division, American Political Science Association Annual Meeting"}
   - {year: "2015", role: Committee Chair, organization: "Sage Best Paper Award, Comparative Politics Section, American Political Science Association"}
-  - {year: "2014-", note: "2016. Planning Committee MemberComparative Study of Electoral Systems (CSES), Modules 5 and 6"}
+  - {year: "2014-2016", role: Planning Committee Member, organization: "Comparative Study of Electoral Systems (CSES), Modules 5 and 6"}
   - {year: "", note: "Reviewer for American Journal of Political Science, American Political Science Review, Applied Economics Letters, British Journal of Political Science, Cambridge University Press, Comparative Political Studies, Economics and Politics, Games and Economic Behavior, International Organization, Journal of the European Economic Association, Journal of Politics, Latin American Politics and Society, Perspectives on Politics, Public Choice, Research and Politics, Review of Economics and Statistics, TESS (Time Sharing Experiments for the Social Sciences), World Politics"}
   - {year: "", note: "Former Editorial Board Member, Journal of Election Technology and Systems (JETS/USENIX), edited by Walter Mebane and Dan Wallach, University of Michigan"}
 

@@ -1,6 +1,11 @@
 #import "lib.typ": *
 #let d = json("data.json")
 
+// Face and body size are overridable so alternatives can be rendered without
+// editing this file:  typst compile ... --input font="EB Garamond" --input size=10.5
+#let FONT = sys.inputs.at("font", default: "Libertinus Serif")
+#let SIZE = eval(sys.inputs.at("size", default: "10.3") + "pt")
+
 #set page(
   paper: "us-letter",
   margin: (x: 0.95in, top: 0.85in, bottom: 0.8in),
@@ -14,14 +19,14 @@
       align(right)[#d.generated])
   },
 )
-#set text(font: "Spectral", size: 9.4pt, fill: ink, lang: "en")
+#set text(font: FONT, size: SIZE, fill: ink, lang: "en")
 #set par(leading: 0.70em, spacing: 0.70em)
 
 // ------------------------------- header -------------------------------------
 #block(below: 1.45em, grid(columns: (1fr, auto), column-gutter: 2em,
   {
-    block(below: 0.9em, text(size: 23pt, weight: "light", tracking: -0.015em, d.profile.name))
-    block(below: 0pt, text(size: 8.3pt, fill: accent, tracking: 0.13em,
+    block(below: 0.9em, text(size: SIZE * 2.45, weight: "light", tracking: -0.015em, d.profile.name))
+    block(below: 0pt, text(size: SIZE * 0.88, fill: accent, tracking: 0.13em,
       upper("Professor of Political Science · ITAM")))
   },
   align(right, {
@@ -35,16 +40,14 @@
 
 #sect("Academic Positions")
 #for p in d.positions {
-  block(below: 0.6em, {
-    text(weight: "medium", p.institution)
-    if "location" in p and p.location != none { text(fill: muted, ", " + p.location) }
-    linebreak()
+  block(below: 1.2em, {
+    orghead(p.institution, sub: if "location" in p and p.location != none { p.location } else { none })
     for r in p.roles {
       let span = if "start" in r and r.start != none {
         " (" + str(r.start) + "–" + (if "end" in r and r.end != none { str(r.end) } else { "" }) + ")"
       } else { "" }
       let unit = if "unit" in r and r.unit != none { ", " + r.unit } else { "" }
-      block(below: 0.46em, pad(left: 1em, text(size: 9pt, top-edge: "cap-height", bottom-edge: "baseline", r.title + unit + span)))
+      block(below: 0.4em, pad(left: 1em, text(top-edge: "cap-height", bottom-edge: "baseline", r.title + unit + span)))
     }
   })
 }
@@ -69,35 +72,32 @@
 #for it in d.other { pubitem(it) }
 
 #sect("Grants")
-#for g in d.grants { dated(g) }
+#for g in d.grants { listitem(g) }
 
 #sect("Fellowships, Affiliations, and Awards")
-#for a in d.awards { dated(a) }
+#for a in d.awards { listitem(a) }
 
 #sect("Professional Service to the Discipline")
-#for s in d.service { dated(s) }
+#for s in d.service { listitem(s) }
 
 #sect("Other Professional Service")
 #for (org, items) in d.institutional {
-  block(below: 0.5em, {
-    text(weight: "medium", size: 9pt, org)
-    v(0.25em, weak: true)
+  block(below: 1.5em, {
+    orghead(org)
     for i in items { plain(i) }
   })
 }
 
 #sect("Invited Presentations")
-#for t in d.talks { dated(t) }
+#for t in d.talks { listitem(t) }
 
 #sect("Presentations at Disciplinary Conferences")
-#for c in d.conferences { dated(c) }
+#for c in d.conferences { listitem(c) }
 
 #sect("Teaching")
 #for inst in d.teaching {
-  block(below: 0.55em, {
-    text(weight: "medium", size: 9pt, inst.name)
-    if inst.years != none { text(fill: muted, size: 8.5pt, ", " + inst.years) }
-    v(0.25em, weak: true)
+  block(below: 1.5em, {
+    orghead(inst.name, sub: inst.years)
     for c in inst.courses { plain(c) }
   })
 }
@@ -106,7 +106,7 @@
 #for a in d.advising { plain(a) }
 
 #sect("Selected Media Coverage of Research")
-#for m in d.media { dated(m) }
+#for m in d.media { listitem(m) }
 
 #sect("Professional Memberships")
 #for m in d.memberships { plain(m) }
@@ -117,9 +117,9 @@
     text(weight: "medium", e.role + ", " + e.organization)
     text(fill: muted, ", " + e.years)
     linebreak()
-    pad(left: 1em, text(size: 8.8pt, e.detail))
+    pad(left: 1em, text(e.detail))
     if "note" in e and e.note != none {
-      linebreak(); pad(left: 1em, text(size: 8.8pt, style: "italic", fill: muted, e.note))
+      linebreak(); pad(left: 1em, text(style: "italic", fill: muted, e.note))
     }
   })
 }

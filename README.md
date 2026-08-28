@@ -59,7 +59,14 @@ data/*.yml ──┬─> src/lib/data.js ──> Astro ────────�
 The CV ignores the web-only fields (`links`, `abstract`, `tags`); the site uses
 them. That is what lets one edit update both.
 
-Fonts are vendored in `cv/fonts/` so the PDF renders identically in CI.
+The CV is set in Libertinus Serif, which ships inside Typst. The build passes
+`--ignore-system-fonts`, so the PDF is identical on any machine — no fonts to
+vendor or pin. To try another face without editing the template:
+
+```bash
+typst compile cv/cv.typ out.pdf --root . --font-path <dir> \
+  --input font="EB Garamond" --input size=10.5
+```
 
 ## Deployment
 

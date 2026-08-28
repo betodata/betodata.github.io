@@ -26,13 +26,16 @@
 #let plain(body) = block(below: 0.62em, width: 100%,
   par(hanging-indent: 1.4em, body))
 
-// An entry parsed out of a flat "2019. Some text." string.
-#let dated(s) = {
-  let m = s.find(regex("^([0-9]{4}[–\-]?[0-9]*)[.,]?\\s+"))
-  if m == none {
-    plain(s)
+// A flat list entry: {year, text}. Items with no year still align their body
+// with everything else, and get a little air so they read as separate notes.
+#let listitem(it) = {
+  if it.year == "" {
+    v(0.35em, weak: true)
+    block(below: 0.62em, width: 100%,
+      grid(columns: (4.1em, 1fr), column-gutter: 0.7em,
+        [], par(hanging-indent: 1.1em, it.text)))
   } else {
-    row(m.trim().trim(".").trim(), s.slice(m.len()))
+    row(it.year, it.text)
   }
 }
 
@@ -55,5 +58,15 @@
       text(size: 8.2pt, style: "italic", fill: muted,
         "Previously circulated as \u{201C}" + it.former + ".\u{201D}")
     }
+  })
+}
+
+// A left-flush institution heading, at body size, with space beneath it.
+#let orghead(name, sub: none) = {
+  // Must exceed the following items' `above` (0.70em) or Typst takes the
+  // larger of the two and the gap never appears.
+  block(below: 1.15em, {
+    text(weight: "medium", name)
+    if sub != none { text(fill: muted, ", " + sub) }
   })
 }
