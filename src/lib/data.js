@@ -36,9 +36,6 @@ export const LINK_LABEL = {
   appendix: 'Appendix', preregistration: 'Pre-registration',
   media: 'Coverage', toc: 'Contents', order: 'Order', review: 'Review',
 };
-// Replication and data get the filled chip — they are the links most worth finding.
-export const EMPHATIC = new Set(['replication', 'data', 'code']);
-
 export const linkLabel = (l) => l.label || LINK_LABEL[l.type] || l.type;
 
 // Word and hand-typed YAML mix straight and curly marks; normalise for display.

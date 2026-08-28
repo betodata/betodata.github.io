@@ -1,5 +1,5 @@
 ---
-import { authorList, linkLabel, EMPHATIC, smart } from '../lib/data.js';
+import { authorList, linkLabel, smart } from '../lib/data.js';
 const { item, showYear = true } = Astro.props;
 const authors = authorList(item);
 const links = item.links || [];
@@ -32,10 +32,7 @@ const year = showYear && item.year ? String(item.year) : '';
   {links.length ? (
     <div class="chips">
       {links.map((l) => (
-        <a href={l.url} target="_blank" rel="noopener"
-           class={EMPHATIC.has(l.type) ? 'hi' : undefined}>
-          {linkLabel(l)}{EMPHATIC.has(l.type) ? ' ↗' : ''}
-        </a>
+        <a href={l.url} target="_blank" rel="noopener">{linkLabel(l)}</a>
       ))}
     </div>
   ) : null}

@@ -181,12 +181,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
   transition:border-color .15s ease,color .15s ease;
 }
 .chips a:hover{border-color:var(--d-acc); color:var(--d-acc)}
-.chips a.hi{background:var(--d-acc); color:var(--d-bg); border-color:var(--d-acc); font-weight:500}
-.chips a.hi:hover{color:var(--d-bg); opacity:.88}
 .light .chips a{border-color:var(--rule); color:var(--mut)}
 .light .chips a:hover{border-color:var(--acc); color:var(--acc)}
-.light .chips a.hi{background:var(--acc); color:var(--bg); border-color:var(--acc)}
-.light .chips a.hi:hover{color:var(--bg); opacity:.88}
 
 .awd{
   font-family:var(--mono); font-size:9.5px; letter-spacing:.06em; color:var(--d-mut);
