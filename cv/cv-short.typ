@@ -18,7 +18,7 @@
   },
 )
 #set text(font: FONT, size: SIZE, fill: ink, lang: "en")
-#set par(leading: 0.5em, spacing: 0.62em)
+#set par(leading: 0.45em, spacing: 0.62em)
 
 #block(below: 1.45em, grid(columns: (1fr, auto), column-gutter: 2em,
   {

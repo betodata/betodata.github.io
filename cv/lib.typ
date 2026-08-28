@@ -20,7 +20,7 @@
   block(below: 0.62em, width: 100%,
     grid(columns: (4.1em, 1fr), column-gutter: 0.7em,
       text(fill: muted, size: 8.2pt)[#year],
-      par(hanging-indent: 1.1em, body)))
+      { set par(hanging-indent: 1.1em); body }))
 }
 
 #let plain(body, indent: 0em) = block(below: 0.5em, width: 100%,
@@ -41,30 +41,36 @@
 
 #let pubitem(it) = {
   row(if it.year == none { "" } else { str(it.year) }, {
-    if it.pre != "" [#it.pre ]
-    if it.ital != "" { emph(it.ital) }
-    if it.vol != "" [ #it.vol]
-    if it.post != "" {
-      if it.ital != "" or it.vol != "" [, ]
-      it.post
-    }
-    "."
+    // The citation is one paragraph; the notes below it are their own blocks.
+    // Joining them with linebreak() put 10.3pt and 8.2pt lines in a single
+    // paragraph, and Typst derives leading from each line's own size, so the
+    // spacing came out uneven.
+    block(below: 0pt, {
+      if it.pre != "" [#it.pre ]
+      if it.ital != "" { emph(it.ital) }
+      if it.vol != "" [ #it.vol]
+      if it.post != "" {
+        if it.ital != "" or it.vol != "" [, ]
+        it.post
+      }
+      "."
+    })
     if it.note != none {
-      linebreak()
-      text(size: 8.2pt, style: "italic", fill: muted, it.note)
+      block(above: 0.42em, below: 0pt,
+        text(size: 8.4pt, style: "italic", fill: muted, it.note))
     }
     if it.former != none {
-      linebreak()
-      text(size: 8.2pt, style: "italic", fill: muted,
-        "Previously circulated as \u{201C}" + it.former + ".\u{201D}")
+      block(above: 0.42em, below: 0pt,
+        text(size: 8.4pt, style: "italic", fill: muted,
+          "Previously circulated as \u{201C}" + it.former + ".\u{201D}"))
     }
   })
 }
 
 // A left-flush institution heading, at body size, with space beneath it.
+// The `below` must exceed the following items' `above` or Typst takes the
+// larger of the two and the gap never appears.
 #let orghead(name, sub: none) = {
-  // Must exceed the following items' `above` (0.70em) or Typst takes the
-  // larger of the two and the gap never appears.
   block(below: 1.15em, {
     text(weight: "medium", name)
     if sub != none { text(fill: muted, ", " + sub) }
