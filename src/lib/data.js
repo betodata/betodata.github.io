@@ -44,6 +44,14 @@ export const linkLabel = (l) => l.label || LINK_LABEL[l.type] || l.type;
 // Word and hand-typed YAML mix straight and curly marks; normalise for display.
 export const smart = (s) => (s ?? '').replace(/(\w)'(\w)/g, '$1\u2019$2').replace(/'/g, '\u2019');
 
+// Splits *emphasised* spans out of a plain-text field so the YAML can stay
+// free of markup. Returns [{text, em}] for the template to render.
+export function emphasise(str) {
+  return (str ?? '').split(/\*([^*]+)\*/g)
+    .map((chunk, i) => ({ text: chunk, em: i % 2 === 1 }))
+    .filter((c) => c.text !== '');
+}
+
 // --- grouping ----------------------------------------------------------------
 export function articlesByYear() {
   const groups = new Map();

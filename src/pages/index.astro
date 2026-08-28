@@ -1,34 +1,29 @@
 ---
 import Base from '../layouts/Base.astro';
 import Entry from '../components/Entry.astro';
-import { profile, publications } from '../lib/data.js';
+import { profile, publications, emphasise } from '../lib/data.js';
 
 // The two most recent articles bridge into the dark research page.
 const selected = publications.articles.slice(0, 2);
-const bioParas = (profile.bio || '').trim().split(/\n\s*\n/);
+
 ---
 <Base current="home" theme="light" description={profile.tagline}>
   <div class="stage">
     <div class="field">
-      <img src="/img/headshot.jpg" alt={`Portrait of ${profile.name}`} width="749" height="1024" fetchpriority="high" />
+      <img src="/img/headshot.jpg" alt={`Portrait of ${profile.name}`} width="989" height="1400" fetchpriority="high" />
     </div>
     <div class="hero">
       <p class="eyebrow">{profile.positions_line}</p>
       <h1>Alberto<br />Simpser</h1>
       <p class="lede">
-        I study how elections are manipulated, how corruption is transmitted across
-        generations, and how <em>social norms</em> shape political behavior — mostly
-        through field experiments and administrative data in Mexico and Latin America.
+        {emphasise(profile.landing.lede).map((c) => (c.em ? <em>{c.text}</em> : c.text))}
       </p>
-      <p class="sub">
-        Previously at the University of Chicago. Ph.D. Political Science and
-        M.A. Economics, Stanford; B.Sc. Harvard College.
-      </p>
+      <p class="sub">{profile.landing.secondary}</p>
       <div class="acts">
         <a class="pri" href="/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae ↗</a>
-        <a href={`mailto:${profile.email}`}>{profile.email}</a>
-        <a href={profile.profiles.google_scholar} target="_blank" rel="noopener">Google Scholar</a>
+        <a href={profile.profiles.google_scholar} target="_blank" rel="noopener">Google Scholar ↗</a>
       </div>
+      <p class="mailto"><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
     </div>
   </div>
 

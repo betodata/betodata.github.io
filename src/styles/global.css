@@ -85,7 +85,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
 .dark .nav a[aria-current="page"]{color:var(--d-ink); box-shadow:inset 0 -1px 0 var(--d-acc)}
 
 /* ------------------------- landing: portrait ----------------------------- */
-.stage{position:relative; overflow:hidden; min-height:min(78vh,620px); display:flex; flex-direction:column}
+.stage{position:relative; overflow:hidden; min-height:min(62vh,470px); display:flex; flex-direction:column}
 .field{position:absolute; inset:0; z-index:0; pointer-events:none}
 .field img{
   position:absolute; right:0; top:-2%; height:112%; width:auto; max-width:none;
@@ -101,7 +101,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
   opacity:.9;
 }
 
-.hero{position:relative; z-index:4; padding:56px var(--pad) 70px; margin-top:auto; max-width:660px}
+.hero{position:relative; z-index:4; padding:44px var(--pad) 40px; margin-top:auto; max-width:660px}
 .eyebrow{
   font-family:var(--mono); font-size:10.5px; letter-spacing:.17em; text-transform:uppercase;
   color:var(--acc); margin:0 0 26px; line-height:1.75;
@@ -112,7 +112,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
 }
 .hero .lede{font-size:16.5px; line-height:1.72; color:var(--body); max-width:var(--measure); margin:0 0 15px}
 .hero .lede em{font-style:italic; color:var(--acc)}
-.hero .sub{font-size:15px; line-height:1.7; color:var(--mut); max-width:var(--measure); margin:0 0 32px}
+.hero .sub{font-size:15px; line-height:1.7; color:var(--mut); max-width:var(--measure); margin:0 0 26px}
 
 .acts{display:flex; flex-wrap:wrap; gap:11px}
 .acts a{
@@ -121,10 +121,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
   background:rgba(255,255,255,.55); transition:border-color .15s ease;
 }
 .acts a.pri{background:var(--ink); color:var(--bg); border-color:var(--ink); font-weight:400}
+.hero .mailto{margin:16px 0 0; font-size:14.5px}
+.hero .mailto a{color:var(--acc); text-decoration:none; border-bottom:1px solid transparent}
+.hero .mailto a:hover{border-bottom-color:var(--acc)}
 .acts a:hover{border-color:var(--acc)}
 
 /* --------------------------- the bridge band ----------------------------- */
-.band{background:var(--d-bg); color:var(--d-ink); padding:52px var(--pad) 58px}
+.band{background:var(--d-bg); color:var(--d-ink); padding:40px var(--pad) 52px}
 .band-h{
   display:flex; justify-content:space-between; align-items:baseline; gap:20px; flex-wrap:wrap;
   font-family:var(--mono); font-size:10.5px; letter-spacing:.17em; text-transform:uppercase;

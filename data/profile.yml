@@ -29,20 +29,21 @@ profiles:
   bluesky: ""      # TODO: optional
   osf: ""          # TODO: optional, for pre-registrations
 
-# [web] Shown on the landing page. Keep to 2–4 short paragraphs.
-bio: |
-  I am Professor and Chair of the Department of Political Science at ITAM in
-  Mexico City. My research examines political intolerance, social norms,
-  governance, accountability, corruption, and electoral manipulation, mostly
-  through field experiments and large-scale observational work in Mexico and
-  Latin America.
+# ---------------------------------------------------------------------------
+# THE LANDING PAGE TEXT.  Edit these two paragraphs to change what appears
+# under your name on the front page. Plain text; wrap a phrase in *asterisks*
+# to italicise and tint it, as with *social norms* below.
+# ---------------------------------------------------------------------------
+landing:
+  lede: >-
+    I study how elections are manipulated, how corruption is transmitted across
+    generations, and how *social norms* shape political behavior — mostly
+    through field experiments and administrative data in Mexico and Latin
+    America.
 
-  Before joining ITAM I taught at the University of Chicago. I have held
-  fellowships at the Institute for Advanced Study in Toulouse, the Hoover
-  Institution at Stanford, and the Niehaus Center at Princeton.
-
-  I hold a Ph.D. in Political Science and an M.A. in Economics from Stanford
-  University, and a B.Sc. in Engineering Sciences from Harvard College.
+  secondary: >-
+    Previously at the University of Chicago. Ph.D. Political Science and
+    M.A. Economics, Stanford; B.Sc. Harvard College.
 
 # [web] One-line strapline under the name on the landing page.
 tagline: Elections, corruption, social norms, and the political economy of accountability.
