@@ -4,35 +4,41 @@ const { item, showYear = true } = Astro.props;
 const authors = authorList(item);
 const links = item.links || [];
 
-// venue line: journal + volume, or press + series for books
+// Venue line: journal + volume for articles, press + series for books.
+// The year rides at the end of this line, parenthetically — it is a fact
+// about the venue, not a heading, so it does not get a column of its own.
 let venue = item.venue || item.publisher || '';
 if (item.editors) venue = `${item.editors}, ${venue}`;
 if (item.publisher && item.venue) venue = `${venue} · ${item.publisher}`;
 if (item.volume) venue = `${venue}, ${item.volume}`;
 if (item.series && !item.venue) venue = `${venue} · ${item.series}`;
+
+const year = showYear && item.year ? String(item.year) : '';
 ---
 <article class="entry">
-  <div class="yr">{showYear ? (item.year ?? '') : ''}</div>
-  <div>
-    <h3>{smart(item.title)}</h3>
-    <p class="who">
-      {authors.map((a, i) => (
-        <>{a.self ? <b>{a.name}</b> : a.name}{i < authors.length - 1 ? (i === authors.length - 2 ? ' & ' : ', ') : ''}</>
-      ))}
-      {item.language ? <span> · in {item.language}</span> : null}
+  <h3>{smart(item.title)}</h3>
+  <p class="who">
+    {authors.map((a, i) => (
+      <>{a.self ? <b>{a.name}</b> : a.name}{i < authors.length - 1 ? (i === authors.length - 2 ? ' & ' : ', ') : ''}</>
+    ))}
+    {item.language ? <span> · in {item.language}</span> : null}
+  </p>
+  {(venue || year) ? (
+    <p class="ven">
+      {venue}{venue && year ? ' ' : ''}
+      {year ? <span class="yr">({year})</span> : null}
     </p>
-    {venue ? <p class="ven">{venue}</p> : null}
-    {links.length ? (
-      <div class="chips">
-        {links.map((l) => (
-          <a href={l.url} target="_blank" rel="noopener"
-             class={EMPHATIC.has(l.type) ? 'hi' : undefined}>
-            {linkLabel(l)}{EMPHATIC.has(l.type) ? ' ↗' : ''}
-          </a>
-        ))}
-      </div>
-    ) : null}
-    {item.note ? <p class="awd">{item.note}</p> : null}
-    {item.former_title ? <p class="prev">Previously circulated as “{smart(item.former_title)}”</p> : null}
-  </div>
+  ) : null}
+  {links.length ? (
+    <div class="chips">
+      {links.map((l) => (
+        <a href={l.url} target="_blank" rel="noopener"
+           class={EMPHATIC.has(l.type) ? 'hi' : undefined}>
+          {linkLabel(l)}{EMPHATIC.has(l.type) ? ' ↗' : ''}
+        </a>
+      ))}
+    </div>
+  ) : null}
+  {item.note ? <p class="awd">{item.note}</p> : null}
+  {item.former_title ? <p class="prev">Previously circulated as “{smart(item.former_title)}”</p> : null}
 </article>
