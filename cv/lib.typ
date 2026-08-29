@@ -4,6 +4,14 @@
 #let ink    = rgb("#141A18")
 #let muted  = rgb("#5F6B67")
 
+// Two levels of vertical rhythm, and only two:
+//   sp-item  a top-level entry under a section rule — each is a discrete
+//            record, so it breathes.
+//   sp-sub   an item grouped beneath an institution heading — these belong
+//            to the heading above them, so they cluster.
+#let sp-item = 0.62em
+#let sp-sub  = 0.40em
+
 #let sect(title, tight: false) = {
   v(if tight { 0.95em } else { 1.5em }, weak: true)
   block(
@@ -17,13 +25,14 @@
 
 // A dated row: year in a fixed left column, body hanging beside it.
 #let row(year, body) = {
-  block(below: 0.62em, width: 100%,
+  block(below: sp-item, width: 100%,
     grid(columns: (4.1em, 1fr), column-gutter: 0.7em,
       text(fill: muted, size: 8.2pt)[#year],
       { set par(hanging-indent: 1.1em); body }))
 }
 
-#let plain(body, indent: 0em) = block(below: 0.5em, width: 100%,
+#let plain(body, indent: 0em, tight: false) = block(
+  below: if tight { sp-sub } else { sp-item }, width: 100%,
   pad(left: indent, par(hanging-indent: 1.4em, body)))
 
 // A flat list entry: {year, text}. Items with no year still align their body
@@ -33,7 +42,7 @@
     // No year to hang from, so this reads as a closing note: flush left,
     // full measure, and clearly separated from the dated entries above.
     v(0.9em, weak: true)
-    block(below: 0.6em, width: 100%, par(hanging-indent: 1.4em, it.text))
+    block(below: sp-item, width: 100%, par(hanging-indent: 1.4em, it.text))
   } else {
     row(it.year, it.text)
   }

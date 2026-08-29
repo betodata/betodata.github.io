@@ -47,7 +47,7 @@
         " (" + str(r.start) + "–" + (if "end" in r and r.end != none { str(r.end) } else { "" }) + ")"
       } else { "" }
       let unit = if "unit" in r and r.unit != none { ", " + r.unit } else { "" }
-      block(below: 0.4em, pad(left: 1em, text(top-edge: "cap-height", bottom-edge: "baseline", r.title + unit + span)))
+      block(below: sp-sub, pad(left: 1em, text(top-edge: "cap-height", bottom-edge: "baseline", r.title + unit + span)))
     }
   })
 }
@@ -82,7 +82,7 @@
 #for (org, items) in d.institutional {
   block(below: 1.5em, {
     orghead(org)
-    for i in items { plain(i, indent: 1.2em) }
+    for i in items { plain(i, indent: 1.2em, tight: true) }
   })
 }
 
@@ -96,15 +96,15 @@
 #for inst in d.teaching {
   block(below: 1.5em, {
     orghead(inst.name, sub: inst.years)
-    for c in inst.courses { plain(c, indent: 1.2em) }
+    for c in inst.courses { plain(c, indent: 1.2em, tight: true) }
   })
 }
 
 #sect("PhD Student Advising")
 #for g in d.advising {
-  block(below: 0.9em, {
+  block(below: 1.5em, {
     if g.group != none { orghead(g.group) }
-    for a in g.items { plain(a, indent: if g.group != none { 1.2em } else { 0em }) }
+    for a in g.items { plain(a, indent: if g.group != none { 1.2em } else { 0em }, tight: true) }
   })
 }
 
@@ -116,14 +116,14 @@
 
 #sect("Other Experience")
 #for e in d.experience {
-  block(below: 0.7em, {
-    block(below: 0.32em, {
+  block(below: sp-item, {
+    block(below: sp-sub, {
       text(weight: "medium", e.role + ", " + e.organization)
       text(fill: muted, ", " + e.years)
     })
-    block(below: 0.45em, pad(left: 1.2em, text(e.detail)))
+    block(below: sp-sub, pad(left: 1.2em, text(e.detail)))
     if "note" in e and e.note != none {
-      block(below: 0.1em, pad(left: 1.2em, text(style: "italic", fill: muted, e.note)))
+      block(below: 0pt, pad(left: 1.2em, text(style: "italic", fill: muted, e.note)))
     }
   })
 }

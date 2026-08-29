@@ -36,14 +36,14 @@
 
 #sect("Academic Positions", tight: true)
 #for p in d.positions {
-  block(below: 0.5em, {
+  block(below: 1.2em, {
     orghead(p.institution)
     for r in p.roles {
       let span = if "start" in r and r.start != none {
         " (" + str(r.start) + "–" + (if "end" in r and r.end != none { str(r.end) } else { "" }) + ")"
       } else { "" }
       let unit = if "unit" in r and r.unit != none { ", " + r.unit } else { "" }
-      block(below: 0.4em, pad(left: 1em, text(top-edge: "cap-height", bottom-edge: "baseline", r.title + unit + span)))
+      block(below: sp-sub, pad(left: 1em, text(top-edge: "cap-height", bottom-edge: "baseline", r.title + unit + span)))
     }
   })
 }
