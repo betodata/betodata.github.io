@@ -54,8 +54,7 @@
 #sect("Selected Publications", tight: true)
 #for it in d.short_articles { pubitem(it) }
 #v(0.4em)
-#text(size: 8.3pt, weight: "medium", tracking: 0.1em, fill: muted, upper("Books"))
-#v(0.4em, weak: true)
+#subhead("Books")
 #for it in d.short_books { pubitem(it) }
 
 #sect("Selected Awards and Fellowships", tight: true)

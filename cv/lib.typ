@@ -76,3 +76,9 @@
     if sub != none { text(fill: muted, ", " + sub) }
   })
 }
+
+// A subsection label inside a section ("Peer-reviewed articles and chapters").
+// `below` must exceed the following entries' `above` or Typst keeps the
+// larger of the two and the gap never appears — the same trap as orghead.
+#let subhead(title) = block(below: 1.0em,
+  text(size: 8.3pt, weight: "medium", tracking: 0.1em, fill: muted, upper(title)))

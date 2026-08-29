@@ -56,13 +56,11 @@
 #for e in d.education { row(e.degree, e.text) }
 
 #sect("Published Research")
-#text(size: 8.3pt, weight: "medium", tracking: 0.1em, fill: muted, upper("Peer-reviewed articles and chapters"))
-#v(0.45em, weak: true)
+#subhead("Peer-reviewed articles and chapters")
 #for it in d.articles { pubitem(it) }
 
 #v(0.5em)
-#text(size: 8.3pt, weight: "medium", tracking: 0.1em, fill: muted, upper("Peer-reviewed books"))
-#v(0.45em, weak: true)
+#subhead("Peer-reviewed books")
 #for it in d.books { pubitem(it) }
 
 #sect("Research in Progress")
