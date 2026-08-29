@@ -36,16 +36,14 @@ profiles:
 # ---------------------------------------------------------------------------
 landing:
   lede: >-
-    My research is about elections, corruption, and *social norms* — why
-    governments and parties manipulate elections, how attitudes toward
-    corruption persist across generations, what shapes tolerance between
-    political opponents, and how citizens hold governments to account. Most
-    of it draws on field experiments and large administrative datasets,
-    mostly in Mexico and Latin America.
+    I study what strengthens and weakens democratic citizenship, focusing on political 
+    polarization, intolerance, prejudice, and social norms, 
+    alongside longstanding lines of work on accountability, corruption, 
+    and electoral manipulation.
 
   secondary: >-
-    Previously at the University of Chicago. Ph.D. Political Science and
-    M.A. Economics, Stanford; B.Sc. Harvard College.
+    I hold a PhD in political science and an MA in economics from Stanford University, 
+    as well as a BSc in environmental engineering from Harvard College.
 
 # [web] One-line strapline under the name on the landing page.
 tagline: Elections, corruption, social norms, and the political economy of accountability.
