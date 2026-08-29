@@ -18,7 +18,12 @@ const institutions = teaching.institutions;
     {institutions.map((inst) => (
       <>
         <p class="grp">
-          {inst.name}{inst.location ? ` · ${inst.location}` : ''}{inst.years ? ` · ${inst.years}` : ''}
+          {inst.name}
+          {(inst.location || inst.years) ? (
+            <span class="meta">
+              {' · '}{[inst.location, inst.years].filter(Boolean).join(' · ')}
+            </span>
+          ) : null}
         </p>
         {inst.courses.map((c) => (
           <article class="entry">

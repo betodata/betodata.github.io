@@ -177,10 +177,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc); outline-offse
 .light .page-head p{color:var(--mut)}
 
 .list{padding:0 var(--pad) 70px}
+/* Group heading: institutions on Teaching, work types on Research. The rule
+   sits BELOW the name, so every group is opened the same way — previously
+   the border was on top, which read as a line closing the group above. */
 .grp{
-  font-family:var(--mono); font-size:10.5px; letter-spacing:.17em; text-transform:uppercase;
-  padding:34px 0 8px; margin-top:16px; border-top:1px solid var(--e-rule); color:var(--e-mut);
+  font-family:var(--serif); font-size:16.5px; font-weight:400; letter-spacing:.005em;
+  color:var(--e-ink); margin:42px 0 20px; padding:0 0 9px;
+  border-bottom:1px solid var(--e-rule);
 }
+.grp:first-child{margin-top:0}
+.grp .meta{font-size:13.5px; color:var(--e-mut); font-style:italic}
+/* The group's own rule already separates it; don't draw a second one. */
+.grp + .entry{border-top:none}
 
 /* ----------------------------- publications ------------------------------ */
 .entry{padding:21px 0; border-top:1px solid var(--e-rule)}
