@@ -55,7 +55,9 @@ articles:
     editors: Ménard and Shirley, eds.
     publisher: Springer Nature
     type: chapter
-    links: []          # TODO:LINK
+    links:
+      - {type: journal, url: "https://link.springer.com/referenceworkentry/10.1007/978-3-031-50810-3_38"}
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813088"}
     tags: [corruption, norms]
 
   - year: 2024
@@ -95,7 +97,7 @@ articles:
     publisher: Springer Nature
     type: chapter
     links:
-      - {type: pdf, url: "https://www.dropbox.com/s/47oqb0uu6av3wpr/Belausteguigoitia%20et%20al%20-%202021%20-%20Carbon%20tax%20Mexico%20book%20chapter.pdf?dl=0"}   # TODO: rehost in repo
+      - {type: journal, url: "https://link.springer.com/chapter/10.1007/978-3-030-82759-5_7"}
     tags: [climate, political-economy]
 
   - year: 2021
@@ -154,12 +156,13 @@ articles:
     tags: [corruption, norms]
 
   - year: 2020
-    title: Electoral Handouts and Electoral Integrity during Mexico's 2018 Elections
+    title: Electoral Handouts During Mexico's 2018 Elections
     coauthors: [Kenneth Greene]
     venue: Política y Gobierno
-    volume: "XXVII(2)"
+    volume: "27(2)"
+    former_title: Electoral Handouts and Electoral Integrity during Mexico's 2018 Elections
     links:
-      - {type: pdf, url: "https://www.dropbox.com/s/f249jbgw5zuqmo9/GreeneSimpserPyGfinal.pdf?dl=0"}   # TODO: rehost in repo
+      - {type: journal, url: "https://www.scielo.org.mx/scielo.php?pid=S1665-20372020000200003&script=sci_arttext&tlng=en", label: "Journal (open access)"}
     tags: [elections, clientelism]
 
   - year: 2018
@@ -207,7 +210,8 @@ articles:
     venue: Latin American Research Review
     volume: "51(1): 62-83"
     links:
-      - {type: pdf, url: "/files/papers/3x1-program-larr-2016.pdf"}   # rescued from Wix, now self-hosted
+      - {type: journal, url: "https://doi.org/10.1353/lar.2016.0013"}
+      - {type: pdf, url: "https://escholarship.org/uc/item/8p95r16w", label: "Open access"}
     tags: [development, local-government]
 
   - year: 2015
@@ -270,7 +274,8 @@ books:
     series: Comparative Constitutional Law and Policy
     links:
       - {type: pdf, url: "/files/books/constitutions-toc.pdf", label: "Table of contents"}
-      - {type: preprint, url: "http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2427794", label: "Chapter 1"}
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2427794", label: "Introduction"}
+      - {type: journal, url: "https://www.cambridge.org/core/books/constitutions-in-authoritarian-regimes/92FBEA0569A6D20CB08ED1BAC30AC455", label: "Cambridge Core"}
       - {type: order, url: "http://www.amazon.com/Constitutions-Authoritarian-Regimes-Comparative-Constitutional/dp/1107663946"}
       - {type: review, url: "http://www.lpbr.net/2014/08/constitutions-in-authoritarian-regimes.html", label: "Law & Politics Book Review"}
 
@@ -280,8 +285,10 @@ books:
     series: Political Economy of Institutions and Decisions
     links:
       - {type: pdf, url: "/files/books/why-governments-toc.pdf", label: "Table of contents"}
-      # NOTE: the current Wix site points "Chapter 1" for BOTH books at SSRN
-      # abstract_id=2427794. One of those is wrong. See question 6.
+      - {type: journal, url: "https://www.cambridge.org/core/books/why-governments-and-parties-manipulate-elections/1EDE2E22B0221491E21A2567C74ACF72", label: "Cambridge Core"}
+      # RESOLVED: SSRN 2427794 is the Introduction to *Constitutions in
+      # Authoritarian Regimes*, not this book. The old Wix site linked it from
+      # both. This book has no free chapter online that I could find.
       - {type: order, url: "http://www.amazon.com/Why-Governments-Parties-Manipulate-Elections/dp/1107448689"}
 
 
@@ -350,7 +357,8 @@ other_publications:
     volume: "30(1): 172-175"
     kind: Review essay
     reviewed_work: "Nic Cheeseman and Brian Klaas, How to Rig an Election (Yale University Press, 2018)"
-    links: []
+    links:
+      - {type: journal, url: "https://doi.org/10.1353/jod.2019.0013"}
 
   - year: 2017
     title: Election Rigging
@@ -363,9 +371,10 @@ other_publications:
   - year: 2008
     title: "Review of Andreas Schedler, ed., Electoral Authoritarianism: The Dynamics of Unfree Competition"
     venue: Perspectives on Politics
-    volume: "6 (June): 212-13"
+    volume: "6(2): 412-413"
     kind: Book review
-    links: []
+    links:
+      - {type: journal, url: "https://doi.org/10.1017/S1537592708081024"}
 
 
 # ---------------------------------------------------------------------------
