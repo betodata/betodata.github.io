@@ -44,8 +44,8 @@ articles:
     volume: "15: 34350"
     former_title: Confounding, Spillovers and Interactions Influence Estimates of Social Distancing Policy Effects
     links:
-      - {type: journal, url: "https://doi.org/10.1038/s41598-025-16861-1"}
-      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3980184"}
+      - {type: journal, url: "https://doi.org/10.1038/s41598-025-16861-1", label: "Journal (open access)"}
+      #- {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3980184"}
       # TODO:LINK replication package
     tags: [covid, methods]
 
@@ -56,8 +56,8 @@ articles:
     publisher: Springer Nature
     type: chapter
     links:
-      - {type: journal, url: "https://link.springer.com/referenceworkentry/10.1007/978-3-031-50810-3_38"}
-      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813088"}
+      - {type: journal, url: "https://link.springer.com/referenceworkentry/10.1007/978-3-031-50810-3_38",label: "Chapter (open access)"}
+      #- {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813088"}
     tags: [corruption, norms]
 
   - year: 2024
