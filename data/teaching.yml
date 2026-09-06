@@ -31,9 +31,9 @@ institutions:
         years: "2014–"
         current: true
         materials:
-          - {label: "Syllabus (Spring 2018)", url: "/files/syllabi/causal-inference-itam-s2018.pdf"}
-          - {label: "Midterm 1 (Spring 2018)", url: "/files/syllabi/causal-inference-midterm1-s2018.pdf"}
-          - {label: "Midterm 2 (Spring 2018)", url: "/files/syllabi/causal-inference-midterm2-s2018.pdf"}
+          #- {label: "Syllabus (Spring 2018)", url: "/files/syllabi/causal-inference-itam-s2018.pdf"}
+          #- {label: "Midterm 1 (Spring 2018)", url: "/files/syllabi/causal-inference-midterm1-s2018.pdf"}
+          #- {label: "Midterm 2 (Spring 2018)", url: "/files/syllabi/causal-inference-midterm2-s2018.pdf"}
         # TODO: 2018 is the most recent syllabus on the old site. Replace with current?
 
       - title: Culture and Development
@@ -50,7 +50,7 @@ institutions:
         years: "2014–"
         current: true
         materials:
-          - {label: "Syllabus (Spring 2018)", url: "/files/syllabi/polecon-corruption-itam-s2018.pdf"}
+          #- {label: "Syllabus (Spring 2018)", url: "/files/syllabi/polecon-corruption-itam-s2018.pdf"}
 
       - title: Culture, Historical Legacies, and Political Economy
         title_es: Seminario de Titulación
@@ -76,7 +76,7 @@ institutions:
         years: "2017–"
         current: true
         materials:
-          - {label: "Syllabus (Spring 2017)", url: "/files/syllabi/institutional-economics-itam-s2017.pdf"}
+          #- {label: "Syllabus (Spring 2017)", url: "/files/syllabi/institutional-economics-itam-s2017.pdf"}
 
   - name: University of Chicago
     current: false
@@ -89,13 +89,13 @@ institutions:
         format: PhD seminar
         years: "2012, 2013, 2014"
         materials:
-          - {label: "Syllabus (Spring 2014)", url: "/files/syllabi/polecon-corruption-uchicago-s2014.pdf"}
+          #- {label: "Syllabus (Spring 2014)", url: "/files/syllabi/polecon-corruption-uchicago-s2014.pdf"}
       - title: Undemocratic Elections
         level: graduate
         format: PhD seminar
         years: "2009, 2012, 2013"
         materials:
-          - {label: "Syllabus (Spring 2013)", url: "/files/syllabi/undemocratic-elections-uchicago-s2013.pdf"}
+          #- {label: "Syllabus (Spring 2013)", url: "/files/syllabi/undemocratic-elections-uchicago-s2013.pdf"}
       - {title: "Political Economy of Development: Selected Topics", level: graduate, format: PhD seminar, years: "2007, 2008, 2011", materials: []}
       - {title: Research Approaches in Political Science, level: graduate, format: PhD seminar, years: "2007, 2008", materials: []}
       - {title: Introduction to the Political Economy of Development, level: undergraduate, format: lecture course, years: "2007–2009, 2011–2013", materials: []}
@@ -114,6 +114,6 @@ institutions:
       - {title: Causal Inference and Experimental Design, level: short-course, years: "Summer 2018", materials: []}
 
 # [web] Optional block for the teaching page.
-advising_note: |
-  I am happy to hear from ITAM students interested in political economy,
-  experimental methods, or causal inference.
+#advising_note: |
+ # I am happy to hear from ITAM students interested in political economy,
+ #experimental methods, or causal inference.

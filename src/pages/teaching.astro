@@ -3,14 +3,19 @@ import Base from '../layouts/Base.astro';
 import { teaching } from '../lib/data.js';
 
 const institutions = teaching.institutions;
+
+// The syllabi promise only holds while something is actually linked, so it
+// comes and goes with the data rather than needing a second edit.
+const hasMaterials = institutions.some(
+  (i) => (i.courses || []).some((c) => (c.materials || []).length));
 ---
 <Base current="teaching" theme="light" title="Teaching"
-      description="Courses taught by Alberto Simpser at ITAM and the University of Chicago, with syllabi.">
+      description={`Courses taught by Alberto Simpser at ITAM and the University of Chicago${hasMaterials ? ', with syllabi' : ''}.`}>
   <div class="page-head">
     <h1>Teaching</h1>
     <p>
       Courses in political economy, causal inference, and experimental methods.
-      Syllabi and course materials are linked where available.
+      {hasMaterials ? ' Syllabi and course materials are linked where available.' : ''}
     </p>
   </div>
 
