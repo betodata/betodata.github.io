@@ -44,7 +44,7 @@ articles:
     volume: "15: 34350"
     former_title: Confounding, Spillovers and Interactions Influence Estimates of Social Distancing Policy Effects
     links:
-      - {type: journal, url: "https://doi.org/10.1038/s41598-025-16861-1", label: "Journal (open access)"}
+      - {type: journal, url: "https://doi.org/10.1038/s41598-025-16861-1", label: "Journal (ungated)"}
       #- {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3980184"}
       # TODO:LINK replication package
     tags: [covid, methods]
@@ -56,7 +56,7 @@ articles:
     publisher: Springer Nature
     type: chapter
     links:
-      - {type: journal, url: "https://link.springer.com/referenceworkentry/10.1007/978-3-031-50810-3_38",label: "Chapter (open access)"}
+      - {type: journal, url: "https://link.springer.com/referenceworkentry/10.1007/978-3-031-50810-3_38",label: "Chapter (ungated)"}
       #- {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813088"}
     tags: [corruption, norms]
 
@@ -97,7 +97,7 @@ articles:
     publisher: Springer Nature
     type: chapter
     links:
-      - {type: journal, url: "https://link.springer.com/chapter/10.1007/978-3-030-82759-5_7", label: "Chapter (open access)"}
+      - {type: journal, url: "https://link.springer.com/chapter/10.1007/978-3-030-82759-5_7", label: "Chapter (ungated)"}
     tags: [climate, political-economy]
 
   - year: 2021
@@ -117,7 +117,7 @@ articles:
     venue: PLoS ONE
     volume: "16(7): e0253490"
     links:
-      - {type: journal, url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253490", label: "Journal (open access)"}
+      - {type: journal, url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253490", label: "Journal (ungated)"}
     tags: [covid, norms, experiments]
 
   - year: 2021
@@ -126,7 +126,7 @@ articles:
     venue: PLoS ONE
     volume: "16(3): e0247454"
     links:
-      - {type: journal, url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0247454", label: "Journal (open access)"}
+      - {type: journal, url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0247454", label: "Journal (ungated)"}
     tags: [covid, norms, experiments]
 
   - year: 2020
@@ -162,7 +162,7 @@ articles:
     volume: "27(2)"
     former_title: Electoral Handouts and Electoral Integrity during Mexico's 2018 Elections
     links:
-      - {type: journal, url: "https://www.scielo.org.mx/scielo.php?pid=S1665-20372020000200003&script=sci_arttext&tlng=en", label: "Journal (open access)"}
+      - {type: journal, url: "https://www.scielo.org.mx/scielo.php?pid=S1665-20372020000200003&script=sci_arttext&tlng=en", label: "Journal (ungated)"}
     tags: [elections, clientelism]
 
   - year: 2018
