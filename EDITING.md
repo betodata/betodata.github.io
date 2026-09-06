@@ -148,6 +148,16 @@ before a reader finds them.
           - {label: "Syllabus (Spring 2026)", url: "/files/syllabi/your-file.pdf"}
 ```
 
+To take one down without losing the file, put a `#` at the start of its line.
+The seven 2018-and-earlier syllabi are commented out this way right now — the
+PDFs are still in `public/files/syllabi/`, so restoring one means deleting a
+`#`.
+
+The teaching page opens with the sentence *"Syllabi and course materials are
+linked where available."* It appears only while at least one material is
+listed anywhere on the page, and disappears on its own when none are — so the
+page never promises links it hasn't got.
+
 ---
 
 ## Preview before publishing (optional)

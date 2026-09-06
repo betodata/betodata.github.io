@@ -3,7 +3,9 @@
 Personal academic site and PDF CV, both rendered from one set of YAML files.
 Adding a publication is a single edit that updates the website *and* both PDFs.
 
-Live at <https://betodata.github.io> — moving to albertosimpser.com.
+Live at <https://betodata.github.io>. The move to albertosimpser.com is a DNS
+and registrar exercise, not a code change — the repo is already configured for
+it (see **Custom domain** below).
 
 > **To change content, read [`EDITING.md`](EDITING.md).** This file is for
 > understanding or modifying the machinery.
@@ -111,7 +113,41 @@ Push to `main`. `.github/workflows/deploy.yml` installs Typst, runs
 GitHub Pages. About a minute end to end.
 
 Pages is configured for **GitHub Actions** as its source, not a branch.
-`public/CNAME` carries the custom domain.
 
 Watch a deploy at
 <https://github.com/betodata/betodata.github.io/actions>.
+
+---
+
+## Custom domain
+
+Three things have to agree, and the site only works on the real domain when all
+three do:
+
+1. **`public/CNAME`** — contains `albertosimpser.com`, copied verbatim into
+   `dist/` on every build.
+2. **The Pages setting** — *Settings → Pages → Custom domain*, same value.
+3. **DNS at the registrar** — four A records at the apex plus a `www` CNAME:
+
+   ```
+   A       @     185.199.108.153
+   A       @     185.199.109.153
+   A       @     185.199.110.153
+   A       @     185.199.111.153
+   CNAME   www   betodata.github.io
+   ```
+
+   Optionally `AAAA @ 2606:50c0:800{0,1,2,3}::153` for IPv6.
+
+**If `public/CNAME` and the Pages setting disagree, the deploy wins.** Every
+build overwrites `dist/CNAME`, so an out-of-date file in the repo silently
+reverts the custom domain on the next push. Change both together.
+
+`astro.config.mjs` sets `site: 'https://albertosimpser.com'`, which is what
+canonical URLs and `og:` tags are built from. It is independent of where the
+site is actually served, so those tags already name the final domain.
+
+**Enforce HTTPS** is a checkbox on the Pages settings page that only becomes
+available once GitHub has issued a certificate for the domain, which needs DNS
+to be pointing at GitHub first. If HTTPS breaks after a DNS change, unticking
+and re-ticking it prompts a re-issue.
