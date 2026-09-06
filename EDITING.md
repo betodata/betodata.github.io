@@ -49,7 +49,7 @@ Open the file and you'll see four headings at the far left margin:
 
 ```
 articles:              line  27   articles and book chapters
-books:                 line 267   your two books
+books:                 line 270   your two books
 working_papers:        line 295   work in progress
 other_publications:    line 352   reviews, encyclopedia entries
 ```
@@ -58,16 +58,26 @@ Put a new item under the right heading. Within each list, entries appear on the
 site in the order they appear in the file — **newest first**, so a new paper
 goes at the top of its list.
 
-### Indentation is the whole game
+### The spaces at the start of each line matter
 
-YAML has no brackets; the structure *is* the indentation. Exactly:
+These files have no brackets or tags. **The blank spaces at the start of a line
+are what says which thing belongs to which**, like an indented outline. Count
+them exactly:
 
 ```
-  - year: 2026                    <- 2 spaces, then "- "
-    title: The paper title        <- 4 spaces
-    links:                        <- 4 spaces
-      - {type: journal, url: "…"} <- 6 spaces, then "- "
+  - year: 2026                            <- 2 spaces, then a dash and a space
+    title: The paper title                <- 4 spaces
+    venue: Journal Name                   <- 4 spaces
+    links:                                <- 4 spaces
+      - {type: journal, url: "https://…"} <- 6 spaces, then a dash and a space
 ```
+
+So: **2 spaces** to begin a new paper, **4 spaces** for each fact about it,
+**6 spaces** for each link. Always the space bar, never the Tab key — a tab
+looks identical on screen and breaks the file.
+
+**The safe way to add a paper is not to type this out.** Copy an existing
+paper, paste it above, and change the words. The spacing comes along with it.
 
 Spaces only, never tabs. If VS Code shows a red squiggle, this is why.
 
@@ -174,27 +184,43 @@ To check just the CV: `npm run cv`, then open `public/cv.pdf`.
 
 ## Publish — THE STEP THAT MAKES IT LIVE
 
-Saving the file changes nothing on the web. You must also do this:
+There are **two copies** of your website: one on your laptop, and one on
+GitHub's computers, which is the one the public sees. Editing a file changes
+only the copy on your laptop. Publishing means **sending the change to
+GitHub**, which then rebuilds the public site.
+
+Two ways to do it. The second needs no Terminal.
+
+### Way A — from your laptop
+
+Open Terminal and type these four lines, one at a time, pressing Return after
+each:
 
 ```bash
 cd "/Users/alberto/claudecodefolder/my website/albertosimpser.com"
 git add -A
-git commit -m "Update landing text"
+git commit -m "Added a new paper"
 git push
 ```
 
-GitHub rebuilds the site and both PDFs, and it is live in about a minute.
+In plain words: *go to the website folder* / *gather up everything I changed* /
+*label the change* / *send it to GitHub*. The words in quotes on the third line
+are a note to yourself — write anything you like.
+
+### Way B — in a web browser, no Terminal
+
+Open the file on GitHub, for example
+<https://github.com/betodata/betodata.github.io/blob/main/data/publications.yml>,
+click the **pencil** icon, make your change, scroll down, and click the green
+**Commit changes** button. Sending is included — there is no second step.
+Works from any computer or iPad.
+
+Either way the site and both PDF CVs rebuild in about a minute.
 
 **Check it worked:** <https://github.com/betodata/betodata.github.io/actions> —
-a green tick means deployed, a red cross means the build failed (almost always
-a YAML indentation slip).
-
-### Or skip the terminal entirely
-
-Edit the file at
-<https://github.com/betodata/betodata.github.io/blob/main/data/profile.yml>,
-click the pencil, make your change, then **Commit changes**. That publishes
-itself. Works from any machine, including an iPad.
+a green tick means it published, a red cross means the file had a mistake in it
+(almost always the spacing). A red cross does **not** take your website down;
+the previous version keeps serving until you fix it.
 
 ---
 
