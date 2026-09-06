@@ -73,7 +73,7 @@ articles:
     links:
       - {type: journal, url: "https://www.nature.com/articles/s41562-024-02043-y"}
       - {type: preprint, url: "https://dx.doi.org/10.2139/ssrn.4456223"}
-      - {type: replication, url: "https://osf.io/f7bzy/", label: "Data & code (OSF)"}
+      - {type: replication, url: "https://osf.io/f7bzy/", label: "Supplementary files"}
     tags: [polarization, intolerance, experiments]
 
   - year: 2024
@@ -126,7 +126,7 @@ articles:
     venue: PLoS ONE
     volume: "16(3): e0247454"
     links:
-      - {type: journal, url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0247454"}
+      - {type: journal, url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0247454", label: "Journal (open access)"}
     tags: [covid, norms, experiments]
 
   - year: 2020
@@ -137,8 +137,8 @@ articles:
     links:
       - {type: journal, url: "https://doi.org/10.1017/S0003055420000398"}
       - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3426568"}
-      - {type: replication, url: "https://doi.org/10.7910/DVN/4M0HEN", label: "Replication code (APSR Dataverse)"}
-      - {type: media, url: "https://voxdev.org/topic/institutions-political-economy/impact-human-error-vote-tallies-evidence-mexico", label: "VoxDev summary"}
+      - {type: replication, url: "https://doi.org/10.7910/DVN/4M0HEN", label: "Supplementary files"}
+      - {type: media, url: "https://voxdev.org/topic/institutions-political-economy/impact-human-error-vote-tallies-evidence-mexico", label: "VoxDev"}
     tags: [elections, integrity]
 
   - year: 2020
@@ -171,6 +171,7 @@ articles:
     venue: Journal of Legal Studies
     volume: "47(S1): 229-245"
     links:
+      - {type: journal, url: "https://doi.org/10.1086/694338"}
       - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2914634"}
       - {type: media, url: "http://www.vox.com/the-big-idea/2017/4/10/15226110/vetting-refugees-terrorism-security-borders", label: "Vox"}
     tags: [migration, institutions]
@@ -211,7 +212,7 @@ articles:
     volume: "51(1): 62-83"
     links:
       - {type: journal, url: "https://doi.org/10.1353/lar.2016.0013"}
-      - {type: pdf, url: "https://escholarship.org/uc/item/8p95r16w", label: "Open access"}
+      - {type: pdf, url: "https://escholarship.org/uc/item/8p95r16w", label: "Preprint"}
     tags: [development, local-government]
 
   - year: 2015
@@ -229,6 +230,7 @@ articles:
     venue: Journal of Politics
     volume: "74(3): 782-795"
     links:
+      - {type: journal, url: "https://doi.org/10.1017/S0022381612000333"}
       - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2047498"}
       - {type: appendix, url: "https://www.journals.uchicago.edu/doi/suppl/10.1017/S0022381612000333"}
     tags: [elections, turnout]
@@ -239,6 +241,7 @@ articles:
     venue: Journal of Politics
     volume: "74(2): 501-513"
     links:
+      - {type: journal, url: "https://doi.org/10.1017/S002238161100168X"}
       - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2047555"}
       - {type: appendix, url: "https://www.journals.uchicago.edu/doi/suppl/10.1017/S002238161100168X"}
     tags: [elections, monitoring]
@@ -260,7 +263,7 @@ articles:
     publisher: Brookings Institution Press
     type: chapter
     links:
-      - {type: order, url: "http://www.amazon.com/Election-Fraud-Detecting-Manipulation-Administration/dp/081570139X"}
+      - {type: order, url: "https://www.brookings.edu/books/election-fraud/", label: "Book"}
     tags: [elections, monitoring]
 
 
@@ -274,8 +277,7 @@ books:
     series: Comparative Constitutional Law and Policy
     links:
       - {type: pdf, url: "/files/books/constitutions-toc.pdf", label: "Table of contents"}
-      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2427794", label: "Introduction"}
-      - {type: journal, url: "https://www.cambridge.org/core/books/constitutions-in-authoritarian-regimes/92FBEA0569A6D20CB08ED1BAC30AC455", label: "Cambridge Core"}
+      - {type: preprint, url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2427794", label: "Introduction preprint"}
       - {type: order, url: "http://www.amazon.com/Constitutions-Authoritarian-Regimes-Comparative-Constitutional/dp/1107663946"}
       - {type: review, url: "http://www.lpbr.net/2014/08/constitutions-in-authoritarian-regimes.html", label: "Law & Politics Book Review"}
 
@@ -285,10 +287,8 @@ books:
     series: Political Economy of Institutions and Decisions
     links:
       - {type: pdf, url: "/files/books/why-governments-toc.pdf", label: "Table of contents"}
+      - {type: pdf, url: "/files/books/why-governments-ch1.pdf", label: "Chapter 1"}
       - {type: journal, url: "https://www.cambridge.org/core/books/why-governments-and-parties-manipulate-elections/1EDE2E22B0221491E21A2567C74ACF72", label: "Cambridge Core"}
-      # RESOLVED: SSRN 2427794 is the Introduction to *Constitutions in
-      # Authoritarian Regimes*, not this book. The old Wix site linked it from
-      # both. This book has no free chapter online that I could find.
       - {type: order, url: "http://www.amazon.com/Why-Governments-Parties-Manipulate-Elections/dp/1107448689"}
 
 
