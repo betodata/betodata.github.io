@@ -3,9 +3,8 @@
 Personal academic site and PDF CV, both rendered from one set of YAML files.
 Adding a publication is a single edit that updates the website *and* both PDFs.
 
-Live at <https://betodata.github.io>. The move to albertosimpser.com is a DNS
-and registrar exercise, not a code change — the repo is already configured for
-it (see **Custom domain** below).
+Live at <https://albertosimpser.com> (and still at <https://betodata.github.io>,
+which GitHub keeps serving). HTTPS is enforced.
 
 > **To change content, read [`EDITING.md`](EDITING.md).** This file is for
 > understanding or modifying the machinery.
@@ -106,27 +105,15 @@ typst compile cv/cv.typ out.pdf --root . --font-path <dir> \
 
 ---
 
-## Deployment
-
-Push to `main`. `.github/workflows/deploy.yml` installs Typst, runs
-`npm run build`, reports link rot without failing the build, and publishes to
-GitHub Pages. About a minute end to end.
-
-Pages is configured for **GitHub Actions** as its source, not a branch.
-
-Watch a deploy at
-<https://github.com/betodata/betodata.github.io/actions>.
-
----
-
 ## Custom domain
 
-Three things have to agree, and the site only works on the real domain when all
-three do:
+Live on `albertosimpser.com` since 2026-09-06. Three things have to agree, and
+the site only works on the real domain while all three do:
 
 1. **`public/CNAME`** — contains `albertosimpser.com`, copied verbatim into
    `dist/` on every build.
-2. **The Pages setting** — *Settings → Pages → Custom domain*, same value.
+2. **The Pages setting** — *Settings → Pages → Custom domain*, same value,
+   with **Enforce HTTPS** ticked.
 3. **DNS at the registrar** — four A records at the apex plus a `www` CNAME:
 
    ```
@@ -137,7 +124,8 @@ three do:
    CNAME   www   betodata.github.io
    ```
 
-   Optionally `AAAA @ 2606:50c0:800{0,1,2,3}::153` for IPv6.
+   `AAAA @ 2606:50c0:800{0,1,2,3}::153` would add IPv6; not currently set, and
+   not needed.
 
 **If `public/CNAME` and the Pages setting disagree, the deploy wins.** Every
 build overwrites `dist/CNAME`, so an out-of-date file in the repo silently
@@ -145,9 +133,48 @@ reverts the custom domain on the next push. Change both together.
 
 `astro.config.mjs` sets `site: 'https://albertosimpser.com'`, which is what
 canonical URLs and `og:` tags are built from. It is independent of where the
-site is actually served, so those tags already name the final domain.
+site is actually served.
 
-**Enforce HTTPS** is a checkbox on the Pages settings page that only becomes
-available once GitHub has issued a certificate for the domain, which needs DNS
-to be pointing at GitHub first. If HTTPS breaks after a DNS change, unticking
-and re-ticking it prompts a re-issue.
+**Enforce HTTPS** only becomes available once GitHub has issued a certificate,
+which needs DNS pointing at GitHub first. If HTTPS breaks after a DNS change,
+unticking and re-ticking it prompts a re-issue.
+
+---
+
+## Where the domain lives
+
+Registrar is moving from **Wix** to **Porkbun**; submitted 2026-09-06, takes
+about five days. The website is unaffected either way — it is served by GitHub
+Pages, and the registrar only decides who holds the DNS zone.
+
+The full procedure, including what to check the day it lands, is in
+`DOMAIN-MOVE.md` **outside this repo**, in the parent folder. It is deliberately
+not committed: it quotes account details and transfer specifics that don't
+belong in a public repository.
+
+Two things about that move that bear on this repo:
+
+- **Wix will not let a Wix-registered domain change nameservers** (*"NS records
+  are not editable"*). So the zone could not be pre-delegated to Porkbun; the
+  nameservers switch as part of the transfer itself. The day it completes, the
+  thing to verify is `dig +short albertosimpser.com NS` — it must return
+  `*.ns.porkbun.com`, not `wixdns.net`.
+- **`asimpser.com` must not point at these same GitHub addresses.** GitHub
+  Pages serves one custom domain per site; a second apex domain gets a 404 and
+  no certificate. It is handled as a URL forward at the registrar instead.
+
+---
+
+## Deployment
+
+Push to `main`. `.github/workflows/deploy.yml` installs Typst, runs
+`npm run build`, reports link rot without failing the build, and publishes to
+GitHub Pages. About a minute end to end.
+
+Pages is configured for **GitHub Actions** as its source, not a branch.
+
+A failed build does not take the live site down — the previous deployment keeps
+serving until a later push succeeds.
+
+Watch a deploy at
+<https://github.com/betodata/betodata.github.io/actions>.
