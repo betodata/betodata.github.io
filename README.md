@@ -135,10 +135,9 @@ the site only works on the real domain while all three do:
 
    They are absent because **Wix cannot store AAAA records** — its editor
    offers only A, CNAME, TXT, SRV, MX and NS. Add them at Porkbun once the
-   registrar transfer completes. As of 2026-09-07 the site is reported
-   unreachable on at least one cellular network while loading normally
-   everywhere else, which is the symptom their absence would produce;
-   unconfirmed, but reason enough not to call them optional.
+   registrar transfer completes. Worth having, but not urgent: a 2026-09-07
+   report of the site hanging on cellular was tested and traced to stale
+   resolver cache at the carrier, not to IPv6.
 
 **If `public/CNAME` and the Pages setting disagree, the deploy wins.** Every
 build overwrites `dist/CNAME`, so an out-of-date file in the repo silently
