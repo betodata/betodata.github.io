@@ -124,8 +124,21 @@ the site only works on the real domain while all three do:
    CNAME   www   betodata.github.io
    ```
 
-   `AAAA @ 2606:50c0:800{0,1,2,3}::153` would add IPv6; not currently set, and
-   not needed.
+   Four `AAAA` records should accompany them, and currently do not:
+
+   ```
+   AAAA    @     2606:50c0:8000::153
+   AAAA    @     2606:50c0:8001::153
+   AAAA    @     2606:50c0:8002::153
+   AAAA    @     2606:50c0:8003::153
+   ```
+
+   They are absent because **Wix cannot store AAAA records** — its editor
+   offers only A, CNAME, TXT, SRV, MX and NS. Add them at Porkbun once the
+   registrar transfer completes. As of 2026-09-07 the site is reported
+   unreachable on at least one cellular network while loading normally
+   everywhere else, which is the symptom their absence would produce;
+   unconfirmed, but reason enough not to call them optional.
 
 **If `public/CNAME` and the Pages setting disagree, the deploy wins.** Every
 build overwrites `dist/CNAME`, so an out-of-date file in the repo silently
