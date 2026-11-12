@@ -113,7 +113,8 @@ institutions:
     location: Bogotá, Colombia
     current: false
     courses:
-      - {title: "Corruption, Government, and Development", level: short-course, years: "Summer 2011, 2012, 2017", materials: []}
+            - {title: "Programa de Alto Gobierno", level: short-course, years: "Summer 2011, 2012, 2017", materials: []}
+            - {title: "Corruption, Government, and Development", level: short-course, years: "Summer 2011, 2012, 2017", materials: []}
 
   - name: Oxford / Nuffield Center for Experimental Social Sciences
     location: Santiago, Chile
