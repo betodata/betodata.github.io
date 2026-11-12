@@ -294,19 +294,24 @@ books:
 
 working_papers:
 
+  - title: "What states teach: The political economy of school textbooks and the making of citizens"
+    coauthors: [Kristin Michelitch, international team of researchers]
+    links: []          # TODO:LINK
+    tags: [civic-values]
+
   - title: "Promoting Civic Values at Scale: Evidence from a Randomized Controlled Trial in Mexico"
     coauthors: [Enrique Seira]
     links: []          # TODO:LINK
     tags: [civic-values, experiments]
 
+  - title: Social Categorization
+    coauthors: [Karine Van der Straeten]
+    links: []          # TODO:LINK
+
   - title: "Strengthening Accountability for Climate Change: Experimental evidence on interventions to encourage pro-climate political behaviors among Mexican citizens"
     coauthors: [Juan Carlos Belausteguigoitia, Vidal Romero]
     links: []          # TODO:LINK
     tags: [climate, experiments]
-
-  - title: Social Categorization
-    coauthors: [Karine Van der Straeten]
-    links: []          # TODO:LINK
 
   - title: Accountability under Polarization
     coauthors: [José Ramón Enríquez, Horacio Larreguy, John Marshall]
