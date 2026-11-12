@@ -14,8 +14,8 @@ institutions:
     current: true
     courses:
 
-      - title: Topics in Data for Public Policy
-        title_es: ""
+      - title: Data for Public Policy
+        title_es: Tópicos de Política Pública II
         level: undergraduate
         format: lecture course
         program: Data Science major
@@ -35,6 +35,14 @@ institutions:
           #- {label: "Midterm 1 (Spring 2018)", url: "/files/syllabi/causal-inference-midterm1-s2018.pdf"}
           #- {label: "Midterm 2 (Spring 2018)", url: "/files/syllabi/causal-inference-midterm2-s2018.pdf"}
         # TODO: 2018 is the most recent syllabus on the old site. Replace with current?
+
+      - title: Behavioral Political Economy
+        title_es: Seminario de Titulación
+        level: undergraduate
+        format: upper-level seminar
+        years: "2022–"
+        current: true
+        materials: []
 
       - title: Culture and Development
         level: undergraduate
