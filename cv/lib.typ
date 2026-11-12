@@ -55,14 +55,19 @@
     // paragraph, and Typst derives leading from each line's own size, so the
     // spacing came out uneven.
     block(below: 0pt, {
-      if it.pre != "" [#it.pre ]
+      // The space after `pre` is emitted only when something follows it.
+      // Unconditionally, it left " ." at the end of every working paper.
+      if it.pre != "" {
+        it.pre
+        if it.ital != "" or it.vol != "" or it.post != "" [ ]
+      }
       if it.ital != "" { emph(it.ital) }
       if it.vol != "" [ #it.vol]
       if it.post != "" {
         if it.ital != "" or it.vol != "" [, ]
         it.post
       }
-      "."
+      it.at("end", default: ".")
     })
     if it.note != none {
       block(above: 0.42em, below: 0pt,

@@ -51,24 +51,41 @@ function citationParts(item) {
 
   if (isBook) {
     const post = [w, item.publisher, item.series].filter(Boolean).join(', ');
-    return { pre: '', ital: item.title, vol: '', post };
+    return { pre: '', ital: item.title, vol: '', post, end: '.' };
   }
-
-  let pre = `\u201C${item.title},\u201D`;
-  if (w) pre += ` ${w},`;
-  if (item.editors) pre += ` in ${item.editors},`;
-  if (!item.venue) pre = pre.replace(/,$/, '');          // working paper: no venue
 
   const post = [];
   if (item.publisher && item.publisher !== item.venue) post.push(item.publisher);
   if (item.series) post.push(item.series);
   if (item.language) post.push(`in ${item.language}`);
 
+  // A title that already ends in ? or ! takes no comma or full stop after it.
+  const ownMark = /[?!]$/.test(item.title);
+  let pre = `\u201C${item.title}${ownMark ? '' : ','}\u201D`;
+  if (w) pre += ` ${w},`;
+  if (item.editors) pre += ` in ${item.editors},`;
+
+  // `end` is the closing punctuation Typst appends. Normally a full stop.
+  let end = '.';
+  const hasTail = !!(item.venue || item.volume || post.length);
+  if (!hasTail) {
+    if (w || item.editors) {
+      // working paper with coauthors:  “Title,” with X and Y.
+      pre = pre.replace(/,$/, '');
+    } else {
+      // sole-authored working paper: the full stop goes inside the quotation
+      // marks and nothing follows —  “Title.”
+      pre = `\u201C${item.title}${ownMark ? '' : '.'}\u201D`;
+      end = '';
+    }
+  }
+
   return {
     pre,
     ital: item.venue || '',
     vol: item.volume || '',
     post: post.join(', '),
+    end,
   };
 }
 
@@ -80,6 +97,7 @@ const fmt = (list) => list.map((i) => {
     ital: smartQuotes(c.ital),
     vol:  smartQuotes(c.vol),
     post: smartQuotes(c.post),
+    end:  c.end,
     note: i.note ?? null,
     former: i.former_title ?? null,
   };
