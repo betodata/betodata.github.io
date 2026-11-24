@@ -295,7 +295,7 @@ books:
 working_papers:
 
   - title: "What States Teach: The Political Economy of School Textbooks and the Making of Citizens"
-    coauthors: [Kristin Michelitch, international team of researchers]
+    coauthors: [Kristin Michelitch, Ahmed Mohamed, Hani Abdel-Warith, Kevin Grieco, an international team of researchers]
     links: []          # TODO:LINK
     tags: [civic-values]
 
@@ -307,6 +307,16 @@ working_papers:
   - title: "Affect and Social Categorization: A Study of Anti-Immigrant Prejudice"
     coauthors: [Karine Van der Straeten]
     links: []          # TODO:LINK
+
+  - title: "Serving Democracy: How Administering an Election Shapes Later Participation"
+    coauthors: [Jonne Kamphorst, Cristina Mac Gregor, Pablo Querubín, Carolina Torreblanca]
+    links: []          # TODO:LINK
+    tags: [political-behavior, democracy]
+
+  - title: "The Daughter Effect: Disentangling the Mechanisms driving the Influence of Children on Parental Participation"
+    coauthors: [Arturo Romero, Pablo Ignacio Soto Mota]
+    links: []          # TODO:LINK
+    tags: [political-behavior, democracy]
 
   - title: "Strengthening Accountability for Climate Change: Experimental evidence on interventions to encourage pro-climate political behaviors among Mexican citizens"
     coauthors: [Juan Carlos Belausteguigoitia, Vidal Romero]
