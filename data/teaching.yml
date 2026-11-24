@@ -14,7 +14,7 @@ institutions:
     current: true
     courses:
 
-      - title: Data, algorithms, and AI for Public Policy
+      - title: Data, Algorithms, and AI for Public Policy
         title_es: Tópicos de Política Pública II
         level: undergraduate
         format: lecture course
