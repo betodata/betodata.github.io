@@ -14,12 +14,12 @@ institutions:
     current: true
     courses:
 
-      - title: Data for Public Policy
+      - title: Data, algorithms, and AI for Public Policy
         title_es: Tópicos de Política Pública II
         level: undergraduate
         format: lecture course
         program: Data Science major
-        years: "2024–"
+        years: "2024, updated 2026"
         current: true
         description: ""     # [web] optional 1–2 sentences
         materials: []       # TODO: add current syllabus
